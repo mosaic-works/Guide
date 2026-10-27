@@ -158,6 +158,11 @@ button { color: inherit; }
 .update-card-left h3 { margin: 0; font-family: var(--serif); font-size: 1.35rem; font-weight: 500; }
 .update-card-left p { margin: 0; color: var(--muted); font-size: .95rem; }
 
+.project-info-card { padding: 34px 32px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: 0 4px 18px rgba(0, 0, 0, .02); }
+.project-info-content { display: grid; gap: 16px; font-size: 1.05rem; line-height: 1.75; color: var(--ink); }
+.project-info-content p { margin: 0; }
+.project-info-content strong { color: var(--ink); font-weight: 650; }
+
 .closing-section { padding: 76px 8px; color: #fff; background: var(--clay); }
 .closing-inner { display: flex; align-items: center; justify-content: space-between; gap: 42px; }
 .closing-inner h2 { font-size: clamp(2.2rem, 4vw, 3.75rem); }

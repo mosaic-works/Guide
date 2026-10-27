@@ -16,15 +16,14 @@ Awareness là dự án triển lãm trực tuyến tại https://awareness-exhib
 
 ## Operating Context
 
-Nhóm viết code bằng VS Code trên máy, lưu mã nguồn trên GitHub, kết nối kho mã với Vercel để triển khai website, và dùng Supabase cho dữ liệu như ảnh, mô hình 3D và video. ChatGPT, Codex và towebp hỗ trợ quá trình chuẩn bị nội dung và phát triển.
+Nhóm viết code bằng VS Code trên máy, lưu mã nguồn trên GitHub, kết nối kho mã với Vercel để triển khai website, và dùng Supabase cho dữ liệu như ảnh, mô hình 3D và video. ChatGPT, Codex, Tencent HY 3D và towebp hỗ trợ quá trình chuẩn bị nội dung và phát triển.
 
 ## Capabilities and Constraints
 
 - Trang là website tĩnh bằng HTML, CSS và JavaScript.
-- Có trang danh sách 29 mã QR, được nhóm theo từng phần và có chế độ xem ảnh.
-- Công cụ tạo và nén mô hình 3D tạm thời ẩn.
+- Có trang danh sách 29 mã QR, được nhóm theo từng phòng và có chế độ xem ảnh.
 - Hiển thị đầy đủ thông tin tài khoản và mật khẩu vận hành nội bộ của nhóm dự án.
-- Trạng thái công cụ: GitHub (Đã push xong), ChatGPT (Đã xong), Codex (Đã xong), Thanh toán (Đang tính).
+- Trạng thái công cụ: GitHub (Đã push xong), ChatGPT (Đã xong), Codex (Đã xong), Tencent HY 3D (Sẵn sàng), Thanh toán (Đang tính).
 - Các mục "Thông tin dự án" và "Hướng phát triển tương lai" có trạng thái Đang cập nhật; mục "Các bước cài đặt" có hướng dẫn 4 phần hoàn chỉnh (IDE, Node.js/Git, GitHub config, và quy trình chạy dự án).
 - Hộp thoại thông báo khi tải/làm mới trang nhắc đăng nhập Gmail, GitHub, ChatGPT, Supabase với 2 nút "Đóng 24h" và "Đóng".
 

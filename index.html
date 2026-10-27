@@ -73,10 +73,11 @@
                     <p>Giới thiệu, mục tiêu và bối cảnh hoạt động của triển lãm trực tuyến Awareness.</p>
                 </div>
             </div>
-            <div class="update-card">
-                <div class="update-card-left">
-                    <span class="status status-waiting">Đang cập nhật</span>
-                    <p>Nội dung chi tiết về thông tin dự án đang được tổng hợp và chuẩn bị cập nhật.</p>
+            <div class="project-info-card">
+                <div class="project-info-content">
+                    <p><strong>AWARENESS</strong> là website triển lãm 3D được xây dựng bằng React, Vite, TypeScript và Three.js. Website chạy trên trình duyệt và có thể triển khai bằng hosting tĩnh, không cần backend riêng. Các phòng trưng bày và trang hiện vật được điều hướng bằng URL dạng hash.</p>
+                    <p>Cấu trúc phòng và thông tin hiện vật nằm trong mã nguồn. Mô hình 3D, hình ảnh và video được tải qua URL công khai từ Supabase Storage. Khi mở trang, website đọc một file JSON media manifest để gắn đúng URL cho từng hiện vật. Nhờ đó, có thể thay đường dẫn media trên Supabase mà không cần sửa giao diện hoặc triển khai lại website.</p>
+                    <p>Nếu không tải được manifest trực tuyến, website dùng bản đã lưu trong trình duyệt hoặc bản dự phòng đi kèm mã nguồn. Cách tổ chức này giúp dự án dễ triển khai, vận hành và cập nhật tư liệu.</p>
                 </div>
             </div>
         </section>
@@ -116,6 +117,12 @@
                         <h3>Codex</h3>
                         <p>Công cụ hỗ trợ viết, kiểm tra và cập nhật code.</p>
                     </div><span class="status status-ready">Đã xong</span>
+                </article>
+                <article class="tool-row">
+                    <div>
+                        <h3>Tencent HY 3D</h3>
+                        <p>Tools tạo mô hình 3D</p>
+                    </div><span class="status status-ready">Sẵn sàng</span>
                 </article>
                 <article class="tool-row">
                     <div>
