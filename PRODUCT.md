@@ -16,16 +16,16 @@ Awareness là dự án triển lãm trực tuyến tại https://awareness-exhib
 
 ## Operating Context
 
-Nhóm viết code bằng VS Code trên máy, lưu mã nguồn trên GitHub, kết nối kho mã với Vercel để triển khai website, và dùng Supabase cho dữ liệu như ảnh, mô hình 3D và video. ChatGPT, Codex, Tencent HY 3D và towebp hỗ trợ quá trình chuẩn bị nội dung và phát triển.
+Nhóm viết code bằng VS Code trên máy, lưu mã nguồn trên GitHub, kết nối kho mã với Vercel để triển khai website, và dùng Supabase cho dữ liệu như ảnh, mô hình 3D và video. ChatGPT, Tencent HY 3D và towebp hỗ trợ quá trình chuẩn bị nội dung và phát triển; Codex được ghi chú là không cần cho mục tiêu trình bày ý tưởng sản phẩm.
 
 ## Capabilities and Constraints
 
 - Trang là website tĩnh bằng HTML, CSS và JavaScript.
 - Có trang danh sách 29 mã QR, được nhóm theo từng phòng và có chế độ xem ảnh.
 - Hiển thị đầy đủ thông tin tài khoản và mật khẩu vận hành nội bộ của nhóm dự án.
-- Trạng thái công cụ: GitHub (Đã push xong), ChatGPT (Đã xong), Codex (Đã xong), Tencent HY 3D (Sẵn sàng), Thanh toán (Đang tính).
+- Các tên công cụ GitHub, Vercel, Supabase, ChatGPT, Tencent HY 3D và towebp có liên kết đến trang tương ứng. Trạng thái: GitHub (Đã push xong), ChatGPT (Đã xong), Tencent HY 3D (Sẵn sàng); Codex hiển thị mờ với ghi chú không cần cho mục tiêu trình bày ý tưởng sản phẩm.
 - Mục "Thông tin dự án" đã có nội dung chi tiết về kiến trúc hệ thống; mục "Hướng phát triển tương lai" có trạng thái Đang cập nhật; mục "Các bước cài đặt" có hướng dẫn 4 phần hoàn chỉnh (IDE, Node.js/Git, GitHub config, và quy trình chạy dự án).
-- Toàn bộ các mục nội dung (Thuyết trình, Thông tin dự án, Công cụ, Tài khoản, Quy trình, Các bước cài đặt, Hướng phát triển) mặc định thu gọn; nhấn trực tiếp vào tiêu đề để mở hoặc thu gọn nội dung. Liên kết menu tự động mở mục tương ứng. Mục Thuyết trình nằm ngay dưới thanh điều hướng và trình bày 8 phần về sản phẩm, dữ liệu, vận hành, giới hạn, định hướng, công cụ, chi phí và mục tiêu lâu dài.
+- Toàn bộ các mục nội dung (Thuyết trình, Thông tin dự án, Công cụ, Tài khoản, Quy trình, Các bước cài đặt, Hướng phát triển) mặc định thu gọn; nhấn trực tiếp vào tiêu đề để mở hoặc thu gọn nội dung. Liên kết menu tự động mở mục tương ứng. Mục Thuyết trình nằm sau phần giới thiệu đầu trang, trước Thông tin dự án, và trình bày 8 phần về sản phẩm, dữ liệu, vận hành, giới hạn, định hướng, công cụ, chi phí và mục tiêu lâu dài.
 
 ## Brand Commitments
 
