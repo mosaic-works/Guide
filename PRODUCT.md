@@ -24,8 +24,8 @@ Nhóm viết code bằng VS Code trên máy, lưu mã nguồn trên GitHub, kế
 - Có trang danh sách 29 mã QR, được nhóm theo từng phòng và có chế độ xem ảnh.
 - Hiển thị đầy đủ thông tin tài khoản và mật khẩu vận hành nội bộ của nhóm dự án.
 - Trạng thái công cụ: GitHub (Đã push xong), ChatGPT (Đã xong), Codex (Đã xong), Tencent HY 3D (Sẵn sàng), Thanh toán (Đang tính).
-- Các mục "Thông tin dự án" và "Hướng phát triển tương lai" có trạng thái Đang cập nhật; mục "Các bước cài đặt" có hướng dẫn 4 phần hoàn chỉnh (IDE, Node.js/Git, GitHub config, và quy trình chạy dự án).
-- Hộp thoại thông báo khi tải/làm mới trang nhắc đăng nhập Gmail, GitHub, ChatGPT, Supabase với 2 nút "Đóng 24h" và "Đóng".
+- Mục "Thông tin dự án" đã có nội dung chi tiết về kiến trúc hệ thống; mục "Hướng phát triển tương lai" có trạng thái Đang cập nhật; mục "Các bước cài đặt" có hướng dẫn 4 phần hoàn chỉnh (IDE, Node.js/Git, GitHub config, và quy trình chạy dự án).
+- Toàn bộ các mục nội dung (Thuyết trình, Thông tin dự án, Công cụ, Tài khoản, Quy trình, Các bước cài đặt, Hướng phát triển) mặc định thu gọn; nhấn trực tiếp vào tiêu đề để mở hoặc thu gọn nội dung. Liên kết menu tự động mở mục tương ứng. Mục Thuyết trình nằm ngay dưới thanh điều hướng và trình bày 8 phần về sản phẩm, dữ liệu, vận hành, giới hạn, định hướng, công cụ, chi phí và mục tiêu lâu dài.
 
 ## Brand Commitments
 

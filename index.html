@@ -23,7 +23,7 @@
             <button class="menu-button" type="button" aria-expanded="false"
                 aria-controls="primary-nav"><span></span><span></span><span class="sr-only">Mở menu</span></button>
             <nav class="primary-nav" id="primary-nav" aria-label="Điều hướng chính">
-                <a href="#thong-tin-du-an">Thông tin dự án</a><a href="#cong-cu">Công cụ</a><a href="#tai-khoan">Tài
+                <a href="#thuyet-trinh">Thuyết trình</a><a href="#thong-tin-du-an">Thông tin dự án</a><a href="#cong-cu">Công cụ</a><a href="#tai-khoan">Tài
                     khoản</a><a href="#quy-trinh">Quy trình</a><a href="#cai-dat">Cài đặt</a><a
                     href="#huong-phat-trien">Hướng phát triển</a><a href="qr.html">Thư viện QR</a>
             </nav>
@@ -31,6 +31,198 @@
     </header>
 
     <main id="top">
+        <section class="section shell section-collapsible is-collapsed presentation-section" id="thuyet-trinh">
+            <h2 class="section-title"><button class="section-title-toggle" type="button" aria-expanded="false" aria-controls="thuyet-trinh-content">Thuyết trình</button></h2>
+            <div class="collapsible-content" id="thuyet-trinh-content" hidden>
+                <article class="presentation-document">
+                    <h3>GIỚI THIỆU HỆ THỐNG TRƯNG BÀY TRỰC TUYẾN 3D</h3>
+                    <p class="presentation-subtitle">Những yếu tố tạo nên sản phẩm và định hướng phát triển</p>
+
+                    <section class="presentation-chapter" id="thuyet-trinh-1">
+                        <h4>1. GIỚI THIỆU SẢN PHẨM HIỆN TẠI</h4>
+                        <p>Website được xây dựng nhằm tạo ra một không gian trưng bày trực tuyến, giúp người dân tìm hiểu, nhận biết các loại ma túy, tiền chất và những chất có tác hại liên quan.</p>
+                        <p>Thay vì chỉ xem tài liệu hoặc hình ảnh thông thường, người tham quan có thể trực tiếp khám phá không gian trưng bày và quan sát các hiện vật dưới dạng mô hình ba chiều (3D).</p>
+                        <p><strong>Ở phiên bản hiện tại, website được tổ chức thành 5 phòng trưng bày.</strong></p>
+                        <p>Mỗi phòng đại diện cho một nhóm hiện vật, được sắp xếp theo chủ đề tương ứng.</p>
+                        <p>Ví dụ: Phòng trưng bày các chất ma túy có nguồn gốc tự nhiên sẽ giới thiệu những hiện vật thuộc nhóm này.</p>
+                        <p><strong>Người tham quan có thể:</strong></p>
+                        <ul>
+                            <li>Tự do lựa chọn phòng trưng bày và di chuyển trong không gian.</li>
+                            <li>Quan sát những hiện vật được trưng bày.</li>
+                            <li>Xoay, phóng to hoặc thu nhỏ mô hình 3D để quan sát.</li>
+                            <li>Xem thông tin giới thiệu, hình ảnh và video minh họa về hiện vật.</li>
+                            <li>Truy cập website thông qua đường dẫn mà không cần đăng ký tài khoản.</li>
+                        </ul>
+                        <p><strong>Tình trạng triển khai:</strong></p>
+                        <p>Đây là phiên bản bước đầu, được xây dựng nhằm ưu tiên hoàn thiện không gian tham quan và giới thiệu hiện vật trong thời gian có hạn.</p>
+                        <p>Website đã có các chức năng tham quan và tương tác cơ bản. Tuy nhiên, hệ thống quản lý nội dung vẫn chưa được phát triển hoàn chỉnh.</p>
+                    </section>
+
+                    <section class="presentation-chapter" id="thuyet-trinh-2">
+                        <h4>2. NHỮNG DỮ LIỆU TẠO NÊN SẢN PHẨM</h4>
+                        <p>Để một hiện vật xuất hiện đầy đủ trên website, cần chuẩn bị ba thành phần chính.</p>
+                        <p><strong>Thứ nhất: Hình ảnh</strong></p>
+                        <p>Hình ảnh được sử dụng để giới thiệu hình dáng, đặc điểm bên ngoài của các hiện vật.</p>
+                        <p>Một số hình ảnh trong tài liệu ban đầu có chất lượng thấp, độ phân giải chưa cao hoặc chưa đáp ứng yêu cầu hiển thị.</p>
+                        <p>Vì vậy, các công cụ hỗ trợ xử lý hình ảnh, bao gồm công nghệ trí tuệ nhân tạo (AI), được sử dụng để nâng cao chất lượng hoặc tạo hình minh họa dựa trên tài liệu tham khảo.</p>
+                        <p>Những hình ảnh được tái dựng cần được đối chiếu với tài liệu gốc và kiểm tra trước khi sử dụng.</p>
+                        <p><strong>Thứ hai: Video</strong></p>
+                        <p>Video có nhiệm vụ truyền tải nội dung tuyên truyền bằng hình ảnh, âm thanh và lời giới thiệu.</p>
+                        <p>Quy trình thực hiện gồm:</p>
+                        <ol>
+                            <li>Tiếp nhận nội dung từ tài liệu do đơn vị cung cấp.</li>
+                            <li>Biên tập thành nội dung thuyết minh dễ hiểu.</li>
+                            <li>Sử dụng công cụ hỗ trợ tạo hoặc biên tập video.</li>
+                            <li>Kiểm tra hình ảnh, âm thanh và nội dung.</li>
+                            <li>Đưa video vào phần giới thiệu của hiện vật.</li>
+                        </ol>
+                        <p>Video giúp người tham quan tiếp nhận thông tin thuận tiện hơn, đặc biệt là những người không có thời gian đọc toàn bộ nội dung tài liệu.</p>
+                        <p><strong>Thứ ba: Mô hình 3D</strong></p>
+                        <p>Mô hình 3D là thành phần tạo nên sự khác biệt giữa website trưng bày trực tuyến và website giới thiệu thông thường.</p>
+                        <p>Để tạo ra một mô hình 3D, quá trình thực hiện gồm nhiều công đoạn:</p>
+                        <ol>
+                            <li>Thu thập hình ảnh và tài liệu về hiện vật.</li>
+                            <li>Xử lý, làm rõ hình ảnh khi cần thiết.</li>
+                            <li>Sử dụng công cụ chuyên dụng để dựng mô hình 3D từ dữ liệu tham khảo.</li>
+                            <li>Kiểm tra và điều chỉnh hình dáng, màu sắc, tỷ lệ.</li>
+                            <li>Tối ưu mô hình để có thể hiển thị trên website.</li>
+                            <li>Lưu trữ mô hình và kết nối với phòng trưng bày tương ứng.</li>
+                        </ol>
+                        <p>Nhờ đó, người tham quan có thể quan sát hiện vật từ nhiều góc độ thay vì chỉ xem một bức ảnh cố định.</p>
+                        <p>Các mô hình được tạo bằng công nghệ hỗ trợ là mô hình minh họa, cần được kiểm tra để bảo đảm phù hợp với hiện vật thực tế.</p>
+                    </section>
+
+                    <section class="presentation-chapter" id="thuyet-trinh-3">
+                        <h4>3. CÁCH WEBSITE VẬN HÀNH</h4>
+                        <p>Để dễ hình dung, có thể chia website thành hai phần.</p>
+                        <p><strong>Phần thứ nhất: Không gian tham quan</strong></p>
+                        <p>Đây là những gì người dân trực tiếp nhìn thấy khi mở website.</p>
+                        <p>Bao gồm các phòng trưng bày, hiện vật, hình ảnh, video và nội dung giới thiệu.</p>
+                        <p><strong>Phần thứ hai: Nơi lưu trữ dữ liệu</strong></p>
+                        <p>Đây là nơi lưu giữ các tài liệu cần thiết để website hoạt động.</p>
+                        <p>Có thể hình dung giống như một kho tư liệu, bên trong chứa hình ảnh, video và mô hình 3D của từng hiện vật.</p>
+                        <p>Định hướng lưu trữ tập trung sử dụng một nền tảng như Supabase để phục vụ việc quản lý dữ liệu lâu dài.</p>
+                        <p><strong>Ví dụ về quy trình hiển thị một hiện vật:</strong></p>
+                        <p>Đầu tiên, hình ảnh và mô hình 3D được hoàn thiện.</p>
+                        <p>Sau đó, dữ liệu được đưa lên nơi lưu trữ và tạo ra đường dẫn để website truy cập.</p>
+                        <p>Cuối cùng, hiện vật sẽ được liên kết với phòng trưng bày phù hợp.</p>
+                        <p>Khi người dân lựa chọn hiện vật, website sử dụng những dữ liệu đã được chuẩn bị để hiển thị hình ảnh, mô hình 3D và nội dung giới thiệu.</p>
+                    </section>
+
+                    <section class="presentation-chapter" id="thuyet-trinh-4">
+                        <h4>4. GIỚI HẠN CỦA PHIÊN BẢN HIỆN TẠI</h4>
+                        <p>Mặc dù website đã có thể phục vụ hoạt động tham quan và giới thiệu hiện vật, hệ thống hiện tại vẫn còn một hạn chế quan trọng.</p>
+                        <p><strong>Đơn vị quản lý chưa thể chủ động thêm, sửa hoặc xóa hiện vật thông qua một giao diện quản lý riêng.</strong></p>
+                        <p>Ví dụ:</p>
+                        <p>Khi đơn vị muốn bổ sung một loại ma túy mới, thay đổi hình ảnh hoặc cập nhật nội dung tuyên truyền, quá trình này vẫn cần có sự hỗ trợ của người phụ trách kỹ thuật.</p>
+                        <p>Điều đó có nghĩa là:</p>
+                        <ul>
+                            <li>Người dân có thể tham quan và tiếp nhận thông tin.</li>
+                            <li>Nội dung hiển thị chủ yếu được chuẩn bị từ trước.</li>
+                            <li>Việc cập nhật chưa được thực hiện trực tiếp bởi cán bộ quản lý.</li>
+                            <li>Khi bổ sung hiện vật, người phụ trách kỹ thuật cần xử lý và cập nhật dữ liệu lên website.</li>
+                        </ul>
+                        <p>Đây là giới hạn của phiên bản triển khai bước đầu, không phải giới hạn của công nghệ trưng bày 3D.</p>
+                    </section>
+
+                    <section class="presentation-chapter" id="thuyet-trinh-5">
+                        <h4>5. ĐỊNH HƯỚNG PHÁT TRIỂN WEBSITE HOÀN CHỈNH</h4>
+                        <p>Mục tiêu trong giai đoạn tiếp theo là phát triển website thành một hệ thống trưng bày và quản lý nội dung hoàn chỉnh.</p>
+                        <p>Hệ thống sẽ có hai nhóm sử dụng riêng biệt.</p>
+                        <h5>A. Đối với người dân</h5>
+                        <p>Người dân vẫn được tự do truy cập và tham quan các phòng trưng bày mà không cần tài khoản.</p>
+                        <p>Có thể xem hình ảnh, video, thông tin và mô hình 3D của từng hiện vật.</p>
+                        <p>Các nội dung mới được đơn vị quản lý công bố sẽ được cập nhật trên website.</p>
+                        <h5>B. Đối với đơn vị quản lý</h5>
+                        <p>Xây dựng một khu vực quản lý riêng, chỉ cán bộ được cấp quyền mới có thể truy cập.</p>
+                        <p>Tại đây, người quản lý có thể:</p>
+                        <ul>
+                            <li><strong>Thêm mới:</strong> Bổ sung hiện vật, phòng trưng bày, hình ảnh, video và mô hình 3D.</li>
+                            <li><strong>Chỉnh sửa:</strong> Thay đổi tên, thông tin giới thiệu, hình ảnh hoặc nội dung tuyên truyền.</li>
+                            <li><strong>Xóa:</strong> Loại bỏ những thông tin hoặc hiện vật không còn phù hợp.</li>
+                            <li><strong>Quản lý:</strong> Sắp xếp hiện vật vào các phòng tương ứng.</li>
+                            <li><strong>Kiểm duyệt và công bố:</strong> Kiểm tra nội dung trước khi đưa đến người tham quan.</li>
+                        </ul>
+                        <p><strong>Ví dụ thực tế:</strong></p>
+                        <p>Khi xuất hiện một loại ma túy mới cần tuyên truyền, cán bộ quản lý chỉ cần truy cập khu vực quản trị, nhập thông tin và bổ sung dữ liệu liên quan.</p>
+                        <p>Sau khi nội dung được kiểm duyệt và công bố, hiện vật mới sẽ xuất hiện trong phòng trưng bày tương ứng.</p>
+                        <p>Quá trình này không cần chỉnh sửa trực tiếp mã nguồn của website.</p>
+                        <p><strong>Lợi ích lâu dài:</strong></p>
+                        <p>Đơn vị có thể chủ động quản lý, bổ sung và cập nhật thông tin, hạn chế phụ thuộc vào người xây dựng website ban đầu.</p>
+                    </section>
+
+                    <section class="presentation-chapter" id="thuyet-trinh-6">
+                        <h4>6. NHỮNG YẾU TỐ VÀ CÔNG CỤ XÂY DỰNG WEBSITE</h4>
+                        <p>Website không chỉ được tạo ra từ một công cụ duy nhất mà là sự kết hợp của nhiều công đoạn.</p>
+                        <p><strong>1. Xây dựng giao diện và không gian trưng bày</strong></p>
+                        <p>Bao gồm thiết kế website, xây dựng phòng trưng bày, bố trí hiện vật và các chức năng tương tác.</p>
+                        <p>Quá trình này có thể được thực hiện bởi người phát triển phần mềm, kết hợp với các công cụ AI hỗ trợ hoặc nhân sự chuyên môn bên ngoài.</p>
+                        <p><strong>2. Xử lý hình ảnh</strong></p>
+                        <p>Sử dụng phần mềm và công cụ AI để làm rõ, điều chỉnh hoặc tạo hình minh họa từ dữ liệu tham khảo.</p>
+                        <p><strong>3. Sản xuất video</strong></p>
+                        <p>Sử dụng công cụ hỗ trợ xây dựng video thuyết minh, kết hợp biên tập hình ảnh, âm thanh và nội dung.</p>
+                        <p><strong>4. Xây dựng mô hình 3D</strong></p>
+                        <p>Sử dụng công cụ tạo mô hình chuyên dụng, kết hợp kiểm tra và điều chỉnh để tạo ra hiện vật có thể quan sát trong không gian ba chiều.</p>
+                        <p><strong>5. Lưu trữ và vận hành dữ liệu</strong></p>
+                        <p>Dữ liệu được đưa lên nền tảng lưu trữ phù hợp, từ đó kết nối với các phòng trưng bày của website.</p>
+                        <p><strong>6. Kiểm tra và bảo trì</strong></p>
+                        <p>Theo dõi hoạt động của website, kiểm tra lỗi, bảo đảm các hiện vật và nội dung hiển thị ổn định.</p>
+                        <p>Các công đoạn này cần được phối hợp để hình thành một sản phẩm có thể sử dụng trong thực tế.</p>
+                    </section>
+
+                    <section class="presentation-chapter" id="thuyet-trinh-7">
+                        <h4>7. CHI PHÍ XÂY DỰNG VÀ DUY TRÌ SẢN PHẨM</h4>
+                        <h5>A. Các nhóm chi phí trong giai đoạn hiện tại</h5>
+                        <p><strong>1. Chi phí xây dựng và bảo trì website</strong></p>
+                        <p>Bao gồm công sức xây dựng giao diện, tạo không gian trưng bày, tích hợp hiện vật, kiểm tra và khắc phục lỗi.</p>
+                        <p>Chi phí phát triển ban đầu và chi phí bảo trì cần được xác định riêng.</p>
+                        <p><strong>2. Chi phí công cụ hỗ trợ hình ảnh</strong></p>
+                        <p>Phát sinh khi sử dụng các công cụ xử lý hoặc tạo lại hình ảnh nhằm đáp ứng yêu cầu hiển thị.</p>
+                        <p>Chi phí phụ thuộc vào số lượng hình ảnh và công cụ được sử dụng.</p>
+                        <p><strong>3. Chi phí công cụ hỗ trợ tạo mô hình 3D</strong></p>
+                        <p>Các nền tảng dựng mô hình 3D có thể tính phí theo gói dịch vụ hoặc số lượt sử dụng.</p>
+                        <p>Một hiện vật có thể cần xử lý nhiều lần để đạt chất lượng phù hợp.</p>
+                        <p><strong>4. Chi phí video nếu phát sinh</strong></p>
+                        <p>Phụ thuộc vào phương pháp sản xuất, công cụ được sử dụng, số lượng và thời lượng video.</p>
+                        <h5>B. Chi phí dự kiến khi phát triển hoàn chỉnh</h5>
+                        <p>Ngoài các khoản chi phí phục vụ việc tạo hiện vật, hệ thống hoàn chỉnh cần xem xét:</p>
+                        <p><strong>1. Chi phí phát triển hệ thống quản trị</strong></p>
+                        <p>Đây là khoản đầu tư để xây dựng chức năng đăng nhập, phân quyền và quản lý nội dung cho cán bộ phụ trách.</p>
+                        <p><strong>2. Chi phí bảo trì và hỗ trợ kỹ thuật</strong></p>
+                        <p>Nhằm kiểm tra, sửa lỗi, bảo đảm website tiếp tục hoạt động ổn định.</p>
+                        <p><strong>3. Chi phí tạo mới hình ảnh, video và mô hình 3D</strong></p>
+                        <p>Phát sinh khi cần bổ sung hiện vật hoặc cập nhật nội dung.</p>
+                        <p><strong>4. Chi phí tên miền</strong></p>
+                        <p>Tên miền là địa chỉ giúp người dân truy cập website dễ dàng.</p>
+                        <p>Ví dụ, đơn vị có thể xem xét sử dụng địa chỉ kết thúc bằng .com hoặc .vn.</p>
+                        <p>Tên miền thường cần được duy trì theo năm và có mức giá khác nhau tùy loại tên miền và nhà cung cấp.</p>
+                        <p><strong>5. Chi phí lưu trữ và vận hành trực tuyến</strong></p>
+                        <p>Website và dữ liệu cần được đặt trên hạ tầng có khả năng phục vụ người truy cập qua Internet.</p>
+                        <p>Tùy số lượng hiện vật, dung lượng video, mô hình 3D và số người truy cập, có thể phát sinh chi phí lưu trữ hoặc nâng cấp dịch vụ.</p>
+                        <p><strong>Lưu ý:</strong> Không phải tất cả các khoản trên đều phát sinh ngay. Chi phí thực tế cần được xác định theo quy mô, số lượng hiện vật và phương án vận hành được lựa chọn.</p>
+                    </section>
+
+                    <section class="presentation-chapter" id="thuyet-trinh-8">
+                        <h4>8. GIÁ TRỊ VÀ MỤC TIÊU LÂU DÀI</h4>
+                        <p>Việc xây dựng không gian trưng bày 3D không chỉ nhằm giới thiệu hình ảnh các loại ma túy mà còn hướng đến hình thức tuyên truyền trực quan, dễ tiếp cận.</p>
+                        <p>Website có thể giúp người dân:</p>
+                        <ul>
+                            <li>Tiếp cận thông tin tuyên truyền thông qua Internet.</li>
+                            <li>Quan sát và tìm hiểu những hiện vật được mô phỏng bằng công nghệ 3D.</li>
+                            <li>Nâng cao nhận thức về các loại ma túy, tiền chất và tác hại liên quan.</li>
+                            <li>Chủ động tìm hiểu nội dung mà không bị giới hạn bởi địa điểm hoặc thời gian tham quan.</li>
+                        </ul>
+                        <p>Đối với đơn vị quản lý, hệ thống hoàn chỉnh sẽ tạo điều kiện để bổ sung nội dung tuyên truyền, mở rộng kho hiện vật và quản lý tập trung.</p>
+                        <h5>KẾT LUẬN</h5>
+                        <p>Phiên bản hiện tại là bước khởi đầu để hình thành một không gian trưng bày trực tuyến bằng công nghệ 3D.</p>
+                        <p>Sản phẩm đã hướng đến việc giúp người dân tham quan, quan sát và tìm hiểu thông tin về các hiện vật một cách trực quan.</p>
+                        <p>Trong giai đoạn tiếp theo, việc hoàn thiện hệ thống quản lý sẽ giúp đơn vị chủ động hơn trong cập nhật thông tin, bổ sung hiện vật và duy trì hoạt động lâu dài.</p>
+                        <p><strong>Mục tiêu cuối cùng là xây dựng một hệ thống trưng bày trực tuyến phục vụ công tác tuyên truyền, có khả năng mở rộng và quản lý bền vững.</strong></p>
+                    </section>
+                </article>
+            </div>
+        </section>
+
         <section class="hero">
             <div class="shell hero-grid">
                 <div class="hero-copy">
@@ -66,231 +258,234 @@
             </div>
         </section>
 
-        <section class="section shell" id="thong-tin-du-an">
-            <div class="section-heading">
+        <section class="section shell section-collapsible is-collapsed" id="thong-tin-du-an">
+            <h2 class="section-title"><button class="section-title-toggle" type="button" aria-expanded="false" aria-controls="thong-tin-du-an-content">Thông tin dự án</button></h2>
+            <div class="collapsible-content" id="thong-tin-du-an-content" hidden>
                 <div>
-                    <h2>Thông tin dự án</h2>
-                    <p>Giới thiệu, mục tiêu và bối cảnh hoạt động của triển lãm trực tuyến Awareness.</p>
-                </div>
-            </div>
-            <div class="project-info-card">
-                <div class="project-info-content">
-                    <p><strong>AWARENESS</strong> là website triển lãm 3D được xây dựng bằng React, Vite, TypeScript và Three.js. Website chạy trên trình duyệt và có thể triển khai bằng hosting tĩnh, không cần backend riêng. Các phòng trưng bày và trang hiện vật được điều hướng bằng URL dạng hash.</p>
-                    <p>Cấu trúc phòng và thông tin hiện vật nằm trong mã nguồn. Mô hình 3D, hình ảnh và video được tải qua URL công khai từ Supabase Storage. Khi mở trang, website đọc một file JSON media manifest để gắn đúng URL cho từng hiện vật. Nhờ đó, có thể thay đường dẫn media trên Supabase mà không cần sửa giao diện hoặc triển khai lại website.</p>
-                    <p>Nếu không tải được manifest trực tuyến, website dùng bản đã lưu trong trình duyệt hoặc bản dự phòng đi kèm mã nguồn. Cách tổ chức này giúp dự án dễ triển khai, vận hành và cập nhật tư liệu.</p>
+                    <p class="section-desc">Giới thiệu, mục tiêu và bối cảnh hoạt động của triển lãm trực tuyến Awareness.</p>
+                    <div class="project-info-card">
+                        <div class="project-info-content">
+                            <p><strong>AWARENESS</strong> là website triển lãm 3D được xây dựng bằng React, Vite, TypeScript và Three.js. Website chạy trên trình duyệt và có thể triển khai bằng hosting tĩnh, không cần backend riêng. Các phòng trưng bày và trang hiện vật được điều hướng bằng URL dạng hash.</p>
+                            <p>Cấu trúc phòng và thông tin hiện vật nằm trong mã nguồn. Mô hình 3D, hình ảnh và video được tải qua URL công khai từ Supabase Storage. Khi mở trang, website đọc một file JSON media manifest để gắn đúng URL cho từng hiện vật. Nhờ đó, có thể thay đường dẫn media trên Supabase mà không cần sửa giao diện hoặc triển khai lại website.</p>
+                            <p>Nếu không tải được manifest trực tuyến, website dùng bản đã lưu trong trình duyệt hoặc bản dự phòng đi kèm mã nguồn. Cách tổ chức này giúp dự án dễ triển khai, vận hành và cập nhật tư liệu.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="section shell" id="cong-cu">
-            <div class="section-heading">
-                <h2>Công cụ của dự án</h2>
-                <p>Mỗi công cụ có một vai trò rõ ràng trong quá trình xây dựng và đưa Awareness lên internet.</p>
-            </div>
-            <div class="tool-list">
-                <article class="tool-row">
-                    <div>
-                        <h3>GitHub</h3>
-                        <p>Lưu kho mã nguồn sau khi hoàn thành code trên máy.</p>
-                    </div><span class="status status-ready">Đã push xong</span>
-                </article>
-                <article class="tool-row">
-                    <div>
-                        <h3>Vercel</h3>
-                        <p>Deploy và chạy website trên internet thông qua kết nối với kho GitHub.</p>
-                    </div><span class="status status-ready">Đang sử dụng</span>
-                </article>
-                <article class="tool-row">
-                    <div>
-                        <h3>Supabase</h3>
-                        <p>Lưu trữ dữ liệu dự án (chưa dữ liệu: ảnh, mô hình 3D, video).</p>
-                    </div><span class="status status-ready">Đang sử dụng</span>
-                </article>
-                <article class="tool-row">
-                    <div>
-                        <h3>ChatGPT</h3>
-                        <p>Công cụ hỗ trợ chỉnh sửa và chuẩn bị hình ảnh.</p>
-                    </div><span class="status status-ready">Đã xong</span>
-                </article>
-                <article class="tool-row">
-                    <div>
-                        <h3>Codex</h3>
-                        <p>Công cụ hỗ trợ viết, kiểm tra và cập nhật code.</p>
-                    </div><span class="status status-ready">Đã xong</span>
-                </article>
-                <article class="tool-row">
-                    <div>
-                        <h3>Tencent HY 3D</h3>
-                        <p>Tools tạo mô hình 3D</p>
-                    </div><span class="status status-ready">Sẵn sàng</span>
-                </article>
-                <article class="tool-row">
-                    <div>
-                        <h3>towebp</h3>
-                        <p>Công cụ đổi ảnh sang WebP cho dung lượng nhẹ và tải nhanh.</p>
-                    </div><span class="status status-ready">Sẵn sàng</span>
-                </article>
-                <article class="tool-row">
-                    <div>
-                        <h3>Thanh toán</h3>
-                        <p>Quản lý và theo dõi chi phí, tính toán thanh toán dự án.</p>
-                    </div><span class="status status-waiting">Đang tính</span>
-                </article>
-                <a class="tool-row tool-row-link" href="qr.html">
-                    <div>
-                        <h3>Thư viện QR</h3>
-                        <p>Xem 29 mã QR của triển lãm, được chia theo từng phần.</p>
-                    </div><span class="row-action" data-icon="right">Mở thư viện</span>
-                </a>
+        <section class="section shell section-collapsible is-collapsed" id="cong-cu">
+            <h2 class="section-title"><button class="section-title-toggle" type="button" aria-expanded="false" aria-controls="cong-cu-content">Công cụ của dự án</button></h2>
+            <div class="collapsible-content" id="cong-cu-content" hidden>
+                <div>
+                    <p class="section-desc">Mỗi công cụ có một vai trò rõ ràng trong quá trình xây dựng và đưa Awareness lên internet.</p>
+                    <div class="tool-list">
+                        <article class="tool-row">
+                            <div>
+                                <h3>GitHub</h3>
+                                <p>Lưu kho mã nguồn sau khi hoàn thành code trên máy.</p>
+                            </div><span class="status status-ready">Đã push xong</span>
+                        </article>
+                        <article class="tool-row">
+                            <div>
+                                <h3>Vercel</h3>
+                                <p>Deploy và chạy website trên internet thông qua kết nối với kho GitHub.</p>
+                            </div><span class="status status-ready">Đang sử dụng</span>
+                        </article>
+                        <article class="tool-row">
+                            <div>
+                                <h3>Supabase</h3>
+                                <p>Lưu trữ dữ liệu dự án (chưa dữ liệu: ảnh, mô hình 3D, video).</p>
+                            </div><span class="status status-ready">Đang sử dụng</span>
+                        </article>
+                        <article class="tool-row">
+                            <div>
+                                <h3>ChatGPT</h3>
+                                <p>Công cụ hỗ trợ chỉnh sửa và chuẩn bị hình ảnh.</p>
+                            </div><span class="status status-ready">Đã xong</span>
+                        </article>
+                        <article class="tool-row">
+                            <div>
+                                <h3>Codex</h3>
+                                <p>Công cụ hỗ trợ viết, kiểm tra và cập nhật code.</p>
+                            </div><span class="status status-ready">Đã xong</span>
+                        </article>
+                        <article class="tool-row">
+                            <div>
+                                <h3>Tencent HY 3D</h3>
+                                <p>Tools tạo mô hình 3D</p>
+                            </div><span class="status status-ready">Sẵn sàng</span>
+                        </article>
+                        <article class="tool-row">
+                            <div>
+                                <h3>towebp</h3>
+                                <p>Công cụ đổi ảnh sang WebP cho dung lượng nhẹ và tải nhanh.</p>
+                            </div><span class="status status-ready">Sẵn sàng</span>
+                        </article>
+                        <article class="tool-row">
+                            <div>
+                                <h3>Thanh toán</h3>
+                                <p>Quản lý và theo dõi chi phí, tính toán thanh toán dự án.</p>
+                            </div><span class="status status-waiting">Đang tính</span>
+                        </article>
+                        <a class="tool-row tool-row-link" href="qr.html">
+                            <div>
+                                <h3>Thư viện QR</h3>
+                                <p>Xem 29 mã QR của triển lãm, được chia theo từng phòng.</p>
+                            </div><span class="row-action" data-icon="right">Mở thư viện</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="section account-section" id="tai-khoan">
+        <section class="section account-section section-collapsible is-collapsed" id="tai-khoan">
             <div class="shell">
-                <div class="section-heading split-heading">
+                <h2 class="section-title"><button class="section-title-toggle" type="button" aria-expanded="false" aria-controls="tai-khoan-content">Thông tin tài khoản</button></h2>
+                <div class="collapsible-content" id="tai-khoan-content" hidden>
                     <div>
-                        <h2>Thông tin tài khoản</h2>
-                        <p>Danh sách tài khoản và mật khẩu trực tiếp phục vụ vận hành dự án.</p>
+                        <p class="section-desc">Danh sách tài khoản và mật khẩu trực tiếp phục vụ vận hành dự án.</p>
+                        <div class="security-note" style="margin-bottom: 28px;">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 3 5 6v5c0 4.8 2.7 8.2 7 10 4.3-1.8 7-5.2 7-10V6l-7-3Z" />
+                                <path d="m9.5 12 1.7 1.7 3.5-4" />
+                            </svg>
+                            <p><strong>Thông tin nội bộ dự án Awareness.</strong> Toàn bộ tài khoản và mật khẩu được liệt kê
+                                để nhóm truy cập và thao tác nhanh chóng.</p>
+                        </div>
+                        <div class="account-table">
+                            <article class="account-row">
+                                <div class="account-number">01</div>
+                                <div class="account-main">
+                                    <h3>Gmail</h3>
+                                    <p>Tài khoản Google chính của dự án.</p>
+                                </div>
+                                <div class="account-detail">
+                                    <div class="detail-item"><span>Email / Tài
+                                            khoản</span><code>thanhthongdev.1999@gmail.com</code></div>
+                                    <div class="detail-item"><span>Mật khẩu</span><code
+                                            class="password-text">thanhthong123@</code></div>
+                                </div>
+                                <div class="account-actions">
+                                    <button class="copy-button" type="button" data-copy="thanhthongdev.1999@gmail.com">Chép
+                                        Email</button>
+                                    <button class="copy-button" type="button" data-copy="thanhthong123@">Chép Pass</button>
+                                    <a href="https://accounts.google.com/" target="_blank" rel="noopener noreferrer"
+                                        data-icon="external">Đăng nhập</a>
+                                </div>
+                            </article>
+                            <article class="account-row">
+                                <div class="account-number">02</div>
+                                <div class="account-main">
+                                    <h3>GitHub</h3>
+                                    <p>Tài khoản lưu trữ kho mã nguồn.</p>
+                                </div>
+                                <div class="account-detail">
+                                    <div class="detail-item"><span>Tên tài khoản</span><code>thanhthong99999</code></div>
+                                    <div class="detail-item"><span>Mật khẩu</span><code
+                                            class="password-text">thanhthong123@</code></div>
+                                </div>
+                                <div class="account-actions">
+                                    <button class="copy-button" type="button" data-copy="thanhthong99999">Chép TK</button>
+                                    <button class="copy-button" type="button" data-copy="thanhthong123@">Chép Pass</button>
+                                    <a href="https://github.com/login" target="_blank" rel="noopener noreferrer"
+                                        data-icon="external">Đăng nhập</a>
+                                </div>
+                            </article>
+                            <article class="account-row">
+                                <div class="account-number">03</div>
+                                <div class="account-main">
+                                    <h3>ChatGPT</h3>
+                                    <p>Chỉnh sửa ảnh.</p>
+                                </div>
+                                <div class="account-detail">
+                                    <div class="detail-item"><span>Phương thức đăng nhập</span><strong>Đăng nhập bằng tài khoản
+                                            Google vừa đăng nhập ở trên</strong></div>
+                                    <div class="detail-item"><span>Tài khoản liên
+                                            kết</span><code>thanhthongdev.1999@gmail.com</code></div>
+                                </div>
+                                <div class="account-actions">
+                                    <a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer"
+                                        data-icon="external">Mở ChatGPT</a>
+                                </div>
+                            </article>
+                            <article class="account-row">
+                                <div class="account-number">04</div>
+                                <div class="account-main">
+                                    <h3>Supabase</h3>
+                                    <p>Lưu dữ liệu như ảnh, mô hình 3D, video.</p>
+                                </div>
+                                <div class="account-detail">
+                                    <div class="detail-item"><span>Phương thức đăng nhập</span><strong>Đăng nhập từ ChatGPT /
+                                            Google vừa đăng nhập ở trên</strong></div>
+                                </div>
+                                <div class="account-actions">
+                                    <a href="https://supabase.com/dashboard/sign-in?returnTo=%2Forg" target="_blank"
+                                        rel="noopener noreferrer" data-icon="external">Mở Supabase</a>
+                                </div>
+                            </article>
+                            <article class="account-row">
+                                <div class="account-number">05</div>
+                                <div class="account-main">
+                                    <h3>VS Code</h3>
+                                    <p>Công cụ code ở máy trước khi đẩy lên GitHub.</p>
+                                </div>
+                                <div class="account-detail">
+                                    <div class="detail-item"><span>Vai trò</span><strong>Soạn thảo code & kết nối tài khoản
+                                            GitHub</strong></div>
+                                </div>
+                                <div class="account-actions">
+                                    <span class="local-label">Cài trên máy</span>
+                                </div>
+                            </article>
+                        </div>
                     </div>
-                    <div class="security-note">
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M12 3 5 6v5c0 4.8 2.7 8.2 7 10 4.3-1.8 7-5.2 7-10V6l-7-3Z" />
-                            <path d="m9.5 12 1.7 1.7 3.5-4" />
-                        </svg>
-                        <p><strong>Thông tin nội bộ dự án Awareness.</strong> Toàn bộ tài khoản và mật khẩu được liệt kê
-                            để nhóm truy cập và thao tác nhanh chóng.</p>
-                    </div>
-                </div>
-                <div class="account-table">
-                    <article class="account-row">
-                        <div class="account-number">01</div>
-                        <div class="account-main">
-                            <h3>Gmail</h3>
-                            <p>Tài khoản Google chính của dự án.</p>
-                        </div>
-                        <div class="account-detail">
-                            <div class="detail-item"><span>Email / Tài
-                                    khoản</span><code>thanhthongdev.1999@gmail.com</code></div>
-                            <div class="detail-item"><span>Mật khẩu</span><code
-                                    class="password-text">thanhthong123@</code></div>
-                        </div>
-                        <div class="account-actions">
-                            <button class="copy-button" type="button" data-copy="thanhthongdev.1999@gmail.com">Chép
-                                Email</button>
-                            <button class="copy-button" type="button" data-copy="thanhthong123@">Chép Pass</button>
-                            <a href="https://accounts.google.com/" target="_blank" rel="noopener noreferrer"
-                                data-icon="external">Đăng nhập</a>
-                        </div>
-                    </article>
-                    <article class="account-row">
-                        <div class="account-number">02</div>
-                        <div class="account-main">
-                            <h3>GitHub</h3>
-                            <p>Tài khoản lưu trữ kho mã nguồn.</p>
-                        </div>
-                        <div class="account-detail">
-                            <div class="detail-item"><span>Tên tài khoản</span><code>thanhthong99999</code></div>
-                            <div class="detail-item"><span>Mật khẩu</span><code
-                                    class="password-text">thanhthong123@</code></div>
-                        </div>
-                        <div class="account-actions">
-                            <button class="copy-button" type="button" data-copy="thanhthong99999">Chép TK</button>
-                            <button class="copy-button" type="button" data-copy="thanhthong123@">Chép Pass</button>
-                            <a href="https://github.com/login" target="_blank" rel="noopener noreferrer"
-                                data-icon="external">Đăng nhập</a>
-                        </div>
-                    </article>
-                    <article class="account-row">
-                        <div class="account-number">03</div>
-                        <div class="account-main">
-                            <h3>ChatGPT</h3>
-                            <p>Chỉnh sửa ảnh.</p>
-                        </div>
-                        <div class="account-detail">
-                            <div class="detail-item"><span>Phương thức đăng nhập</span><strong>Đăng nhập bằng tài khoản
-                                    Google vừa đăng nhập ở trên</strong></div>
-                            <div class="detail-item"><span>Tài khoản liên
-                                    kết</span><code>thanhthongdev.1999@gmail.com</code></div>
-                        </div>
-                        <div class="account-actions">
-                            <a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer"
-                                data-icon="external">Mở ChatGPT</a>
-                        </div>
-                    </article>
-                    <article class="account-row">
-                        <div class="account-number">04</div>
-                        <div class="account-main">
-                            <h3>Supabase</h3>
-                            <p>Lưu dữ liệu như ảnh, mô hình 3D, video.</p>
-                        </div>
-                        <div class="account-detail">
-                            <div class="detail-item"><span>Phương thức đăng nhập</span><strong>Đăng nhập từ ChatGPT /
-                                    Google vừa đăng nhập ở trên</strong></div>
-                        </div>
-                        <div class="account-actions">
-                            <a href="https://supabase.com/dashboard/sign-in?returnTo=%2Forg" target="_blank"
-                                rel="noopener noreferrer" data-icon="external">Mở Supabase</a>
-                        </div>
-                    </article>
-                    <article class="account-row">
-                        <div class="account-number">05</div>
-                        <div class="account-main">
-                            <h3>VS Code</h3>
-                            <p>Công cụ code ở máy trước khi đẩy lên GitHub.</p>
-                        </div>
-                        <div class="account-detail">
-                            <div class="detail-item"><span>Vai trò</span><strong>Soạn thảo code & kết nối tài khoản
-                                    GitHub</strong></div>
-                        </div>
-                        <div class="account-actions">
-                            <span class="local-label">Cài trên máy</span>
-                        </div>
-                    </article>
                 </div>
             </div>
         </section>
 
-        <section class="section workflow-section shell" id="quy-trinh">
-            <div class="section-heading">
-                <h2>Quy trình triển khai</h2>
-                <p>Các bước thực hiện đưa sản phẩm Awareness lên internet.</p>
-            </div>
-            <ol class="workflow-list">
-                <li><span class="step-number">1</span>
-                    <div>
-                        <h3>Code tại VS Code</h3>
-                        <p>Code tại VS Code tại máy connect với tài khoản GitHub (đã tạo).</p>
-                    </div>
-                </li>
-                <li><span class="step-number">2</span>
-                    <div>
-                        <h3>Đẩy code lên GitHub</h3>
-                        <p>Code xong đẩy lên kho GitHub (đã push xong).</p>
-                    </div>
-                </li>
-                <li><span class="step-number">3</span>
-                    <div>
-                        <h3>Kết nối Vercel</h3>
-                        <p>Vào Vercel connect với kho GitHub đã chứa code đã tải từ máy lên.</p>
-                    </div>
-                </li>
-                <li><span class="step-number">4</span>
-                    <div>
-                        <h3>Website hoạt động</h3>
-                        <p>Sẽ ra đường dẫn triển lãm trực tuyến chạy trên internet.</p><a
-                            href="https://awareness-exhibition.vercel.app/" target="_blank" rel="noopener noreferrer"
-                            data-icon="external">awareness-exhibition.vercel.app</a>
-                    </div>
-                </li>
-            </ol>
-
-            <div class="installation-steps" id="cai-dat">
-                <div class="sub-heading">
-                    <h3>Các bước cài đặt</h3>
-                    <p>Hướng dẫn thiết lập môi trường, công cụ và khởi chạy dự án từ đầu.</p>
+        <section class="section workflow-section shell section-collapsible is-collapsed" id="quy-trinh">
+            <h2 class="section-title"><button class="section-title-toggle" type="button" aria-expanded="false" aria-controls="quy-trinh-content">Quy trình triển khai</button></h2>
+            <div class="collapsible-content" id="quy-trinh-content" hidden>
+                <div>
+                    <p class="section-desc">Các bước thực hiện đưa sản phẩm Awareness lên internet.</p>
+                    <ol class="workflow-list">
+                        <li><span class="step-number">1</span>
+                            <div>
+                                <h3>Code tại VS Code</h3>
+                                <p>Code tại VS Code tại máy connect với tài khoản GitHub (đã tạo).</p>
+                            </div>
+                        </li>
+                        <li><span class="step-number">2</span>
+                            <div>
+                                <h3>Đẩy code lên GitHub</h3>
+                                <p>Code xong đẩy lên kho GitHub (đã push xong).</p>
+                            </div>
+                        </li>
+                        <li><span class="step-number">3</span>
+                            <div>
+                                <h3>Kết nối Vercel</h3>
+                                <p>Vào Vercel connect với kho GitHub đã chứa code đã tải từ máy lên.</p>
+                            </div>
+                        </li>
+                        <li><span class="step-number">4</span>
+                            <div>
+                                <h3>Website hoạt động</h3>
+                                <p>Sẽ ra đường dẫn triển lãm trực tuyến chạy trên internet.</p><a
+                                    href="https://awareness-exhibition.vercel.app/" target="_blank" rel="noopener noreferrer"
+                                    data-icon="external">awareness-exhibition.vercel.app</a>
+                            </div>
+                        </li>
+                    </ol>
                 </div>
+            </div>
 
-                <div class="setup-stages">
+            <div class="installation-steps section-collapsible is-collapsed" id="cai-dat">
+                <h3 class="section-title"><button class="section-title-toggle" type="button" aria-expanded="false" aria-controls="cai-dat-content">Các bước cài đặt</button></h3>
+                <div class="collapsible-content" id="cai-dat-content" hidden>
+                    <div>
+                        <p class="section-desc">Hướng dẫn thiết lập môi trường, công cụ và khởi chạy dự án từ đầu.</p>
+                        <div class="setup-stages">
                     <article class="setup-stage">
                         <div class="setup-stage-header">
                             <span class="stage-tag">Phần 1</span>
@@ -505,21 +700,23 @@
                             </div>
                         </div>
                     </article>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section shell" id="huong-phat-trien">
-            <div class="section-heading">
+        <section class="section shell section-collapsible is-collapsed" id="huong-phat-trien">
+            <h2 class="section-title"><button class="section-title-toggle" type="button" aria-expanded="false" aria-controls="huong-phat-trien-content">Hướng phát triển tương lai</button></h2>
+            <div class="collapsible-content" id="huong-phat-trien-content" hidden>
                 <div>
-                    <h2>Hướng phát triển tương lai</h2>
-                    <p>Kế hoạch mở rộng, nâng cấp tính năng và định hướng phát triển của sản phẩm.</p>
-                </div>
-            </div>
-            <div class="update-card">
-                <div class="update-card-left">
-                    <span class="status status-waiting">Đang cập nhật</span>
-                    <p>Nội dung định hướng phát triển tương lai đang được hoàn thiện và chuẩn bị cập nhật.</p>
+                    <p class="section-desc">Kế hoạch mở rộng, nâng cấp tính năng và định hướng phát triển của sản phẩm.</p>
+                    <div class="update-card">
+                        <div class="update-card-left">
+                            <span class="status status-waiting">Đang cập nhật</span>
+                            <p>Nội dung định hướng phát triển tương lai đang được hoàn thiện và chuẩn bị cập nhật.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -543,29 +740,6 @@
             <p>Hướng dẫn vận hành dự án (emhiusss) · <span data-year></span></p>
         </div>
     </footer>
-    <dialog class="notice-dialog" id="notice-dialog" aria-labelledby="notice-title">
-        <div class="notice-dialog-inner">
-            <div class="notice-header">
-                <div class="notice-badge">
-                    <svg viewBox="0 0 24 24" class="notice-icon" aria-hidden="true" fill="none" stroke="currentColor"
-                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10" />
-                        <line x1="12" y1="8" x2="12" y2="12" />
-                        <line x1="12" y1="16" x2="12.01" y2="16" />
-                    </svg>
-                    <span id="notice-title">Thông báo</span>
-                </div>
-            </div>
-            <div class="notice-body">
-                <p class="notice-message">Hãy đăng nhập Gmail, GitHub, ChatGPT, Supabase</p>
-                <a href="#tai-khoan" class="notice-link">Check tài khoảng</a>
-            </div>
-            <div class="notice-actions">
-                <button type="button" class="button button-light" id="notice-close-24h">Đóng 24h</button>
-                <button type="button" class="button button-dark" id="notice-close-now">Đóng</button>
-            </div>
-        </div>
-    </dialog>
 
     <div class="toast" role="status" aria-live="polite"></div>
 </body>

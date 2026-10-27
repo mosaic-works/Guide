@@ -155,49 +155,43 @@ if (previewDialog) {
     });
 }
 
-const noticeDialog = document.getElementById('notice-dialog');
-if (noticeDialog && typeof noticeDialog.showModal === 'function') {
-    const dismissedUntil = localStorage.getItem('notice_dismissed_until');
-    const now = Date.now();
-    if (!dismissedUntil || now > Number(dismissedUntil)) {
-        setTimeout(() => {
-            try {
-                noticeDialog.showModal();
-            } catch {
-                // Không lỗi nếu dialog đã hiển thị
-            }
-        }, 120);
-    }
+// Bấm vào tiêu đề để mở hoặc thu gọn nội dung của từng mục.
+const collapsibleSections = document.querySelectorAll('.section-collapsible');
 
-    const close24hBtn = document.getElementById('notice-close-24h');
-    const closeNowBtn = document.getElementById('notice-close-now');
+function setSectionState(section, shouldCollapse) {
+    const titleToggle = section.querySelector('.section-title-toggle');
+    if (!titleToggle) return;
+    const content = document.getElementById(titleToggle.getAttribute('aria-controls'));
+    if (!content) return;
 
-    close24hBtn?.addEventListener('click', () => {
-        localStorage.setItem('notice_dismissed_until', String(Date.now() + 24 * 60 * 60 * 1000));
-        noticeDialog.close();
-    });
-
-    closeNowBtn?.addEventListener('click', () => {
-        noticeDialog.close();
-    });
-
-    const noticeLinks = noticeDialog.querySelectorAll('a[href^="#"]');
-    noticeLinks.forEach((link) => {
-        link.addEventListener('click', (event) => {
-            event.preventDefault();
-            const targetId = link.getAttribute('href').slice(1);
-            noticeDialog.close();
-            const targetEl = document.getElementById(targetId);
-            if (targetEl) {
-                targetEl.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    });
-
-    noticeDialog.addEventListener('click', (event) => {
-        const bounds = noticeDialog.getBoundingClientRect();
-        const isOutside = event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom;
-        if (isOutside) noticeDialog.close();
-    });
+    section.classList.toggle('is-collapsed', shouldCollapse);
+    titleToggle.setAttribute('aria-expanded', String(!shouldCollapse));
+    content.hidden = shouldCollapse;
 }
+
+collapsibleSections.forEach((section) => {
+    const titleToggle = section.querySelector('.section-title-toggle');
+    if (!titleToggle) return;
+
+    titleToggle.addEventListener('click', () => {
+        setSectionState(section, !section.classList.contains('is-collapsed'));
+    });
+});
+
+// Khi bấm vào menu điều hướng trên cùng, tự động mở rộng mục đó nếu đang bị thu gọn
+document.querySelectorAll('.primary-nav a[href^="#"], .hero-actions a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', () => {
+        const targetId = link.getAttribute('href').slice(1);
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+            if (targetEl.classList.contains('section-collapsible') && targetEl.classList.contains('is-collapsed')) {
+                setSectionState(targetEl, false);
+            }
+            const parentCollapsible = targetEl.closest('.section-collapsible');
+            if (parentCollapsible && parentCollapsible.classList.contains('is-collapsed')) {
+                setSectionState(parentCollapsible, false);
+            }
+        }
+    });
+});
 
