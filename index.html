@@ -24,8 +24,8 @@
                 aria-controls="primary-nav"><span></span><span></span><span class="sr-only">Mở menu</span></button>
             <nav class="primary-nav" id="primary-nav" aria-label="Điều hướng chính">
                 <a href="#thong-tin-du-an">Thông tin dự án</a><a href="#cong-cu">Công cụ</a><a href="#tai-khoan">Tài
-                    khoản</a><a href="#quy-trinh">Quy trình</a><a href="#huong-phat-trien">Hướng phát triển</a><a
-                    href="qr.html">Thư viện QR</a>
+                    khoản</a><a href="#quy-trinh">Quy trình</a><a href="#cai-dat">Cài đặt</a><a
+                    href="#huong-phat-trien">Hướng phát triển</a><a href="qr.html">Thư viện QR</a>
             </nav>
         </div>
     </header>
@@ -276,6 +276,230 @@
                     </div>
                 </li>
             </ol>
+
+            <div class="installation-steps" id="cai-dat">
+                <div class="sub-heading">
+                    <h3>Các bước cài đặt</h3>
+                    <p>Hướng dẫn thiết lập môi trường, công cụ và khởi chạy dự án từ đầu.</p>
+                </div>
+
+                <div class="setup-stages">
+                    <article class="setup-stage">
+                        <div class="setup-stage-header">
+                            <span class="stage-tag">Phần 1</span>
+                            <h4>Môi trường code & Công cụ cơ bản</h4>
+                            <p>Tối ưu giao diện Windows, tải bộ cài đặt và thiết lập VS Code.</p>
+                        </div>
+                        <div class="setup-items">
+                            <div class="setup-item">
+                                <h5>1. Cấu hình Windows tránh nhảy tab Microsoft Edge khi Alt + Tab</h5>
+                                <p>Vào <strong>Settings</strong> &rarr; <strong>System</strong> &rarr;
+                                    <strong>Multitasking</strong> &rarr; Tại mục <em>Alt + Tab</em> chọn:
+                                    <code>Don't show tabs</code>.</p>
+                            </div>
+
+                            <div class="drive-banner github-banner">
+                                <div class="drive-banner-text">
+                                    <strong>Clone mã nguồn dự án từ GitHub</strong>
+                                    <span>Tải toàn bộ source code dự án về máy tính qua Git:</span>
+                                </div>
+                                <a href="https://github.com/mosaic-works/Guide"
+                                    target="_blank" rel="noopener noreferrer" class="button button-dark">Mở GitHub</a>
+                            </div>
+
+                            <div class="setup-item" style="margin-top: -8px; margin-bottom: 20px;">
+                                <div class="code-box">
+                                    <code>git clone https://github.com/mosaic-works/Guide.git</code>
+                                    <button type="button" class="copy-button"
+                                        data-copy="git clone https://github.com/mosaic-works/Guide.git">Sao chép</button>
+                                </div>
+                            </div>
+
+                            <div class="setup-item">
+                                <h5>2. Cài đặt môi trường & phần mềm lập trình</h5>
+                                <ol class="step-checklist">
+                                    <li><strong>VS Code</strong>: Trình soạn thảo mã nguồn chính + <strong>Antigravity
+                                            IDE</strong>.</li>
+                                    <li><strong>Git Bash</strong>: Công cụ điều khiển dòng lệnh Git trên Windows.</li>
+                                    <li><strong>Extensions cho VS Code</strong>: Cài đặt 3 tiện ích mở rộng bắt buộc:
+                                        <code>Code Runner</code>, <code>HTML CSS Support</code>,
+                                        <code>Live Server</code>.
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="setup-stage">
+                        <div class="setup-stage-header">
+                            <span class="stage-tag">Phần 2</span>
+                            <h4>Cài đặt Node.js, npm & Git</h4>
+                            <p>Cài đặt qua dòng lệnh winget hoặc tải trực tiếp từ trang chính thức.</p>
+                        </div>
+                        <div class="setup-items">
+                            <div class="setup-item">
+                                <h5>Tải bộ cài thủ công từ website chính thức</h5>
+                                <p>
+                                    Node.js: <a href="https://nodejs.org/en/download" target="_blank"
+                                        rel="noopener noreferrer" class="link-pill">nodejs.org/en/download</a>
+                                    &nbsp;·&nbsp;
+                                    Git: <a href="https://git-scm.com/install/windows" target="_blank"
+                                        rel="noopener noreferrer" class="link-pill">git-scm.com/install/windows</a>
+                                </p>
+                            </div>
+
+                            <div class="setup-item">
+                                <h5>Cài đặt Node.js LTS (qua Winget trong PowerShell)</h5>
+                                <div class="code-box">
+                                    <code>winget install --id OpenJS.NodeJS.LTS -e --source winget --accept-package-agreements --accept-source-agreements</code>
+                                    <button type="button" class="copy-button"
+                                        data-copy="winget install --id OpenJS.NodeJS.LTS -e --source winget --accept-package-agreements --accept-source-agreements">Sao
+                                        chép</button>
+                                </div>
+                            </div>
+
+                            <div class="setup-item">
+                                <h5>Cài đặt Git (qua Winget trong PowerShell)</h5>
+                                <div class="code-box">
+                                    <code>winget install --id Git.Git -e --source winget --accept-package-agreements --accept-source-agreements</code>
+                                    <button type="button" class="copy-button"
+                                        data-copy="winget install --id Git.Git -e --source winget --accept-package-agreements --accept-source-agreements">Sao
+                                        chép</button>
+                                </div>
+                            </div>
+
+                            <div class="setup-item">
+                                <h5>Bật quyền thực thi Script trên PowerShell (RemoteSigned)</h5>
+                                <div class="code-box">
+                                    <code>Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned</code>
+                                    <button type="button" class="copy-button"
+                                        data-copy="Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned">Sao
+                                        chép</button>
+                                </div>
+                            </div>
+
+                            <div class="setup-item">
+                                <h5>Kiểm tra phiên bản npm sau khi cài</h5>
+                                <div class="code-box">
+                                    <code>npm -v</code>
+                                    <button type="button" class="copy-button" data-copy="npm -v">Sao chép</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="setup-stage">
+                        <div class="setup-stage-header">
+                            <span class="stage-tag">Phần 3</span>
+                            <h4>Cấu hình tài khoản GitHub trên máy</h4>
+                            <p>Thiết lập thông tin tác giả commit và đăng nhập tài khoản máy tính.</p>
+                        </div>
+                        <div class="setup-items">
+                            <div class="setup-item">
+                                <h5>1. Cấu hình thông tin tác giả commit</h5>
+                                <div class="code-box">
+                                    <code>git config --global user.name "thanhthong99999"</code>
+                                    <button type="button" class="copy-button"
+                                        data-copy='git config --global user.name "thanhthong99999"'>Sao chép</button>
+                                </div>
+                                <div class="code-box">
+                                    <code>git config --global user.email "thanhthongdev.1999@gmail.com"</code>
+                                    <button type="button" class="copy-button"
+                                        data-copy='git config --global user.email "thanhthongdev.1999@gmail.com"'>Sao
+                                        chép</button>
+                                </div>
+                            </div>
+
+                            <div class="setup-item">
+                                <h5>2. Kiểm tra lại thông tin cấu hình</h5>
+                                <div class="code-box">
+                                    <code>git config --global --list</code>
+                                    <button type="button" class="copy-button" data-copy="git config --global --list">Sao
+                                        chép</button>
+                                </div>
+                            </div>
+
+                            <div class="setup-item">
+                                <h5>3. Đăng nhập GitHub trên máy tính (Git Credential Manager)</h5>
+                                <p>Kiểm tra phiên bản Git Credential Manager:</p>
+                                <div class="code-box">
+                                    <code>git credential-manager --version</code>
+                                    <button type="button" class="copy-button"
+                                        data-copy="git credential-manager --version">Sao chép</button>
+                                </div>
+                                <p>Đăng nhập vào tài khoản GitHub:</p>
+                                <div class="code-box">
+                                    <code>git credential-manager github login</code>
+                                    <button type="button" class="copy-button"
+                                        data-copy="git credential-manager github login">Sao chép</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="setup-stage">
+                        <div class="setup-stage-header">
+                            <span class="stage-tag">Phần 4</span>
+                            <h4>Khởi chạy dự án (Khi tải/clone từ GitHub về)</h4>
+                            <p>Các lệnh cài đặt dependencies, build và khởi chạy dev server.</p>
+                        </div>
+                        <div class="setup-items">
+                            <div class="setup-item">
+                                <h5>Trình tự chạy dự án lần đầu</h5>
+                                <ol class="step-checklist">
+                                    <li>
+                                        <span>Bước 1: Cài đặt sạch các gói thư viện từ file lock</span>
+                                        <div class="code-box">
+                                            <code>npm ci</code>
+                                            <button type="button" class="copy-button" data-copy="npm ci">Sao
+                                                chép</button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>Bước 2: Cài đặt hoặc bổ sung phụ thuộc</span>
+                                        <div class="code-box">
+                                            <code>npm install</code>
+                                            <button type="button" class="copy-button" data-copy="npm install">Sao
+                                                chép</button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>Bước 3: Biên dịch build thử nghiệm</span>
+                                        <div class="code-box">
+                                            <code>npm run build</code>
+                                            <button type="button" class="copy-button" data-copy="npm run build">Sao
+                                                chép</button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>Bước 4: Chạy máy chủ phát triển cục bộ</span>
+                                        <div class="code-box">
+                                            <code>npm run dev</code>
+                                            <button type="button" class="copy-button" data-copy="npm run dev">Sao
+                                                chép</button>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </div>
+
+                            <div class="setup-item">
+                                <h5>Lệnh kiểm tra khi gặp sự cố hoặc lỗi package</h5>
+                                <p>Kiểm tra gói Vite trong dự án:</p>
+                                <div class="code-box">
+                                    <code>npm ls vite</code>
+                                    <button type="button" class="copy-button" data-copy="npm ls vite">Sao chép</button>
+                                </div>
+                                <p>Kiểm tra nội dung file cấu hình package.json:</p>
+                                <div class="code-box">
+                                    <code>Get-Content package.json</code>
+                                    <button type="button" class="copy-button" data-copy="Get-Content package.json">Sao
+                                        chép</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
         </section>
 
         <section class="section shell" id="huong-phat-trien">

@@ -25,7 +25,7 @@ Nhóm viết code bằng VS Code trên máy, lưu mã nguồn trên GitHub, kế
 - Công cụ tạo và nén mô hình 3D tạm thời ẩn.
 - Hiển thị đầy đủ thông tin tài khoản và mật khẩu vận hành nội bộ của nhóm dự án.
 - Trạng thái công cụ: GitHub (Đã push xong), ChatGPT (Đã xong), Codex (Đã xong), Thanh toán (Đang tính).
-- Các mục "Thông tin dự án" và "Hướng phát triển tương lai" có trạng thái Đang cập nhật.
+- Các mục "Thông tin dự án" và "Hướng phát triển tương lai" có trạng thái Đang cập nhật; mục "Các bước cài đặt" có hướng dẫn 4 phần hoàn chỉnh (IDE, Node.js/Git, GitHub config, và quy trình chạy dự án).
 - Hộp thoại thông báo khi tải/làm mới trang nhắc đăng nhập Gmail, GitHub, ChatGPT, Supabase với 2 nút "Đóng 24h" và "Đóng".
 
 ## Brand Commitments

@@ -54,25 +54,61 @@ const qrItems = [...document.querySelectorAll('.qr-list li')];
 const qrSections = [...document.querySelectorAll('.qr-section')];
 const resultCount = document.querySelector('[data-result-count]');
 const emptyState = document.querySelector('.empty-state');
+const filterTabs = [...document.querySelectorAll('.filter-tab')];
+const resetBtn = document.getElementById('reset-qr-search');
+
+let currentFilter = 'all';
+
+function updateQrGallery() {
+    const query = searchInput ? searchInput.value.trim().toLocaleLowerCase('vi') : '';
+    let visibleCount = 0;
+
+    qrItems.forEach((item) => {
+        const itemSection = item.dataset.section || item.closest('.qr-section')?.dataset.section;
+        const matchesCategory = currentFilter === 'all' || itemSection === currentFilter;
+        const card = item.querySelector('.qr-card') || item;
+        const name = card.dataset.name || item.textContent;
+        const matchesSearch = !query || name.toLocaleLowerCase('vi').includes(query);
+
+        const isVisible = matchesCategory && matchesSearch;
+        item.classList.toggle('is-hidden', !isVisible);
+        if (isVisible) visibleCount += 1;
+    });
+
+    qrSections.forEach((section) => {
+        const sectionMatchesCategory = currentFilter === 'all' || section.dataset.section === currentFilter;
+        const hasVisibleItem = [...section.querySelectorAll('.qr-list li')].some((item) => !item.classList.contains('is-hidden'));
+        section.classList.toggle('is-hidden', !sectionMatchesCategory || !hasVisibleItem);
+    });
+
+    if (resultCount) {
+        resultCount.textContent = `${visibleCount} mã QR`;
+    }
+    emptyState?.classList.toggle('is-visible', visibleCount === 0);
+}
+
+if (filterTabs.length) {
+    filterTabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+            filterTabs.forEach((t) => t.classList.remove('is-active'));
+            tab.classList.add('is-active');
+            currentFilter = tab.dataset.filter || 'all';
+            updateQrGallery();
+        });
+    });
+}
 
 if (searchInput && qrItems.length) {
-    searchInput.addEventListener('input', () => {
-        const query = searchInput.value.trim().toLocaleLowerCase('vi');
-        let visibleCount = 0;
+    searchInput.addEventListener('input', updateQrGallery);
+}
 
-        qrItems.forEach((item) => {
-            const matches = item.textContent.toLocaleLowerCase('vi').includes(query);
-            item.classList.toggle('is-hidden', !matches);
-            if (matches) visibleCount += 1;
-        });
-
-        qrSections.forEach((section) => {
-            const hasVisibleItem = [...section.querySelectorAll('.qr-list li')].some((item) => !item.classList.contains('is-hidden'));
-            section.classList.toggle('is-hidden', !hasVisibleItem);
-        });
-
-        if (resultCount) resultCount.textContent = `${visibleCount} mã QR`;
-        emptyState?.classList.toggle('is-visible', visibleCount === 0);
+if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+        if (searchInput) searchInput.value = '';
+        currentFilter = 'all';
+        filterTabs.forEach((t) => t.classList.toggle('is-active', t.dataset.filter === 'all'));
+        updateQrGallery();
+        searchInput?.focus();
     });
 }
 
@@ -80,25 +116,38 @@ const previewDialog = document.querySelector('.preview-dialog');
 
 if (previewDialog) {
     const previewTitle = previewDialog.querySelector('[data-preview-title]');
+    const previewSection = previewDialog.querySelector('[data-preview-section]');
     const previewImage = previewDialog.querySelector('.preview-image');
     const originalLink = previewDialog.querySelector('.original-link');
+    const downloadBtn = previewDialog.querySelector('#preview-download');
     const closeButton = previewDialog.querySelector('.close-button');
 
     document.querySelectorAll('.qr-list a').forEach((link) => {
         link.addEventListener('click', (event) => {
             if (typeof previewDialog.showModal !== 'function') return;
             event.preventDefault();
-            const name = link.textContent.trim();
-            previewTitle.textContent = name;
-            previewImage.src = link.href;
-            previewImage.alt = `Hình QR: ${name}`;
-            originalLink.href = link.href;
+            const name = link.dataset.name || link.querySelector('.qr-name')?.textContent.trim() || link.textContent.trim();
+            const sectionTitle = link.dataset.sectionTitle || 'Mã QR';
+
+            if (previewTitle) previewTitle.textContent = name;
+            if (previewSection) previewSection.textContent = sectionTitle;
+            if (previewImage) {
+                previewImage.src = link.href;
+                previewImage.alt = `Hình QR: ${name}`;
+            }
+            if (originalLink) originalLink.href = link.href;
+            if (downloadBtn) {
+                downloadBtn.href = link.href;
+                const fileName = link.href.split('/').pop() || 'qr-code.png';
+                downloadBtn.setAttribute('download', fileName);
+            }
+
             previewDialog.classList.toggle('poster', link.href.endsWith('/qr.png'));
             previewDialog.showModal();
         });
     });
 
-    closeButton.addEventListener('click', () => previewDialog.close());
+    closeButton?.addEventListener('click', () => previewDialog.close());
     previewDialog.addEventListener('click', (event) => {
         const bounds = previewDialog.getBoundingClientRect();
         const isOutside = event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom;
