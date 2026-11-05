@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dữ liệu ảnh của các công cụ trong dự án Awareness.">
+    <title>Dữ liệu ảnh — Awareness</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .di-page { background: var(--paper); }
+        .di-header-actions { display: flex; align-items: center; }
+        .di-main { min-height: calc(100vh - 180px); }
+
+        /* Hero */
+        .di-hero { padding: 56px 8px 44px; border-bottom: 1px solid var(--line); background: var(--surface); }
+        .di-hero-inner { display: flex; align-items: flex-end; justify-content: space-between; gap: 36px; flex-wrap: wrap; }
+        .di-hero h1 { margin: 8px 0 10px; font-family: var(--serif); font-size: clamp(2.3rem, 4.5vw, 3.6rem); font-weight: 500; line-height: 1.05; letter-spacing: -.035em; }
+        .di-hero p { max-width: 58ch; margin: 0; color: var(--muted); font-size: 1.08rem; }
+
+        /* Menu list */
+        .di-content { padding-block: 60px 100px; }
+        .di-menu-list { border-top: 1px solid var(--ink); margin: 0; padding: 0; list-style: none; }
+
+        .di-menu-link {
+            display: grid;
+            grid-template-columns: 52px minmax(0, 1fr) auto;
+            align-items: center;
+            gap: 24px;
+            min-height: 100px;
+            padding: 20px 10px;
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 1px solid var(--line);
+            transition: background 180ms ease, padding-inline 180ms cubic-bezier(.16, 1, .3, 1);
+        }
+        .di-menu-link:hover { background: var(--paper-deep); padding-inline: 22px; }
+
+        .di-menu-num { color: var(--clay-dark); font-family: var(--serif); font-size: 1rem; font-variant-numeric: tabular-nums; align-self: start; padding-top: 4px; }
+
+        .di-menu-info h2 { margin: 0 0 5px; font-family: var(--serif); font-size: 1.55rem; font-weight: 500; }
+        .di-menu-info p  { margin: 0; color: var(--muted); font-size: .9rem; }
+
+        .di-menu-arrow { color: var(--clay-dark); font-size: .92rem; font-weight: 700; white-space: nowrap; }
+
+        @media (max-width: 720px) {
+            .di-hero { padding-block: 44px 36px; }
+            .di-hero-inner { gap: 20px; }
+            .di-menu-link { grid-template-columns: 36px minmax(0, 1fr) auto; gap: 14px; min-height: 86px; }
+            .di-menu-info h2 { font-size: 1.3rem; }
+        }
+        @media (max-width: 480px) {
+            .di-menu-link { padding-inline: 0; }
+            .di-menu-link:hover { padding-inline: 10px; }
+        }
+    </style>
+</head>
+<body class="di-page">
+
+    <header class="site-header qr-header">
+        <div class="shell header-inner">
+            <a class="brand" href="index.html" aria-label="Awareness — về trang hướng dẫn">
+                <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2v28M2 16h28M6.1 6.1l19.8 19.8M25.9 6.1 6.1 25.9M10.6 3.5l10.8 25M28.5 10.6l-25 10.8M21.4 3.5l-10.8 25M3.5 10.6l25 10.8"/></svg>
+                <span>Awareness</span>
+            </a>
+            <div class="di-header-actions">
+                <a class="button button-light" href="index.html">Về trang hướng dẫn</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="di-main">
+
+        <section class="di-hero">
+            <div class="shell di-hero-inner">
+                <div>
+                    <span class="stage-tag">Bộ dữ liệu ảnh</span>
+                    <h1>Dữ liệu ảnh</h1>
+                    <p>Hình ảnh minh họa giao diện của 5 công cụ chính trong dự án Awareness. Chọn một mục để xem ảnh chi tiết.</p>
+                </div>
+                <div class="qr-hero-stats">
+                    <div class="stat-card">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Công cụ</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="shell di-content">
+            <ul class="di-menu-list">
+
+                <li>
+                    <a class="di-menu-link" href="img-chatgpt.html">
+                        <span class="di-menu-num">01</span>
+                        <div class="di-menu-info">
+                            <h2>ChatGPT</h2>
+                            <p>Công cụ hỗ trợ chỉnh sửa và chuẩn bị hình ảnh.</p>
+                        </div>
+                        <span class="di-menu-arrow">Xem ảnh →</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="di-menu-link" href="img-create3d.html">
+                        <span class="di-menu-num">02</span>
+                        <div class="di-menu-info">
+                            <h2>Create3D</h2>
+                            <p>Công cụ tạo mô hình 3D từ hình ảnh tham khảo.</p>
+                        </div>
+                        <span class="di-menu-arrow">Xem ảnh →</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="di-menu-link" href="img-supabase.html">
+                        <span class="di-menu-num">03</span>
+                        <div class="di-menu-info">
+                            <h2>Supabase</h2>
+                            <p>Nền tảng lưu trữ dữ liệu: ảnh, mô hình 3D, video.</p>
+                        </div>
+                        <span class="di-menu-arrow">Xem ảnh →</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="di-menu-link" href="img-tenmien.html">
+                        <span class="di-menu-num">04</span>
+                        <div class="di-menu-info">
+                            <h2>Tenmien</h2>
+                            <p>Hình ảnh minh họa về cấu hình tên miền cho website.</p>
+                        </div>
+                        <span class="di-menu-arrow">Xem ảnh →</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="di-menu-link" href="img-vercel.html">
+                        <span class="di-menu-num">05</span>
+                        <div class="di-menu-info">
+                            <h2>Vercel</h2>
+                            <p>Nền tảng deploy và vận hành website trên internet.</p>
+                        </div>
+                        <span class="di-menu-arrow">Xem ảnh →</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="shell footer-inner">
+            <a class="brand brand-small" href="index.html" aria-label="Awareness">
+                <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2v28M2 16h28M6.1 6.1l19.8 19.8M25.9 6.1 6.1 25.9M10.6 3.5l10.8 25M28.5 10.6l-25 10.8M21.4 3.5l-10.8 25M3.5 10.6l25 10.8"/></svg>
+                <span>Awareness</span>
+            </a>
+            <p>Dữ liệu ảnh — tài liệu nội bộ dự án.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
