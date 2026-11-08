@@ -13,14 +13,16 @@
 <body>
     <header class="site-header">
         <div class="shell header-inner">
-                        <time class="header-clock" data-live-clock aria-label="Ngày và giờ hiện tại">
-                <span class="header-clock-time" data-clock-time>--:--:--</span>
-                <span class="header-clock-date" data-clock-date>--/--/----</span>
-            </time>
-            <a class="brand" href="#top" aria-label="Awareness — về đầu trang">
-                <span class="brand-mark" aria-hidden="true">✯</span>
-                <span>Awareness</span>
-            </a>
+            <div class="header-identity">
+                <a class="brand" href="#top" aria-label="Awareness — về đầu trang">
+                    <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 1.5 14.65 8.28 21.9 8.72 16.31 13.37 18.16 20.42 12 16.58 5.84 20.42 7.69 13.37 2.1 8.72 9.35 8.28Z" fill="currentColor"/></svg></span>
+                    <span>Awareness</span>
+                </a>
+                <time class="header-clock" data-live-clock aria-label="Ngày và giờ hiện tại">
+                    <span class="header-clock-time" data-clock-time>--:--:--</span>
+                    <span class="header-clock-date" data-clock-date>--/--/----</span>
+                </time>
+            </div>
             <button class="menu-button" type="button" aria-expanded="false"
                 aria-controls="primary-nav"><span></span><span></span><span class="sr-only">Mở menu</span></button>
             <nav class="primary-nav" id="primary-nav" aria-label="Điều hướng chính">
@@ -35,7 +37,7 @@
         <section class="hero">
             <div class="shell hero-grid">
                 <div class="hero-copy">
-                    <h1>Mọi thứ để vận hành <em>Awareness.</em></h1>
+                    <h1>Mọi thứ về <em>Awareness.</em></h1>
                     <div class="hero-actions">
                         <a class="button button-dark" href="https://awareness-exhibition.vercel.app/" target="_blank"
                             rel="noopener noreferrer" data-icon="external">Truy cập website</a>
@@ -64,7 +66,7 @@
             </div>
         </section>
 
-        <section class="section shell section-collapsible is-collapsed intro-section" id="gioi-thieu">
+        <section class="section shell section-collapsible accordion-card is-collapsed intro-section" id="gioi-thieu">
             <h2 class="section-title"><button class="section-title-toggle" type="button" aria-expanded="false" aria-controls="gioi-thieu-content">Giới thiệu</button></h2>
             <div class="collapsible-content" id="gioi-thieu-content" hidden>
             <div class="intro-content">
@@ -86,7 +88,7 @@
             </div>
         </section>
 
-        <section class="section shell section-collapsible is-collapsed" id="cong-cu">
+        <section class="section shell section-collapsible accordion-card is-collapsed" id="cong-cu">
             <h2 class="section-title"><button class="section-title-toggle" type="button" aria-expanded="false" aria-controls="cong-cu-content">Công cụ của dự án</button></h2>
             <div class="collapsible-content" id="cong-cu-content" hidden>
                 <div>
@@ -127,7 +129,7 @@
             </div>
         </section>
 
-        <section class="section account-section section-collapsible is-collapsed" id="tai-khoan">
+        <section class="section shell account-section section-collapsible accordion-card is-collapsed" id="tai-khoan">
             <div class="shell">
                 <h2 class="section-title"><button class="section-title-toggle" type="button" aria-expanded="false" aria-controls="tai-khoan-content">Thông tin tài khoản</button></h2>
                 <div class="collapsible-content" id="tai-khoan-content" hidden>

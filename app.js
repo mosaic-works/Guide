@@ -262,31 +262,36 @@ if (previewDialog) {
     });
 }
 
-// Bấm vào tiêu đề để mở hoặc thu gọn nội dung của từng mục.
+// Mở hoặc thu gọn mục bằng tiêu đề; các thẻ Accordion còn nhận click trên bề mặt thẻ.
 const collapsibleSections = document.querySelectorAll('.section-collapsible');
 const sectionAnimations = new WeakMap();
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 function setSectionState(section, shouldCollapse) {
     const titleToggle = section.querySelector('.section-title-toggle');
-    if (!titleToggle) return;
+    if (!titleToggle) return Promise.resolve();
     const content = document.getElementById(titleToggle.getAttribute('aria-controls'));
-    if (!content) return;
+    if (!content) return Promise.resolve();
 
+    const isAccordionCard = section.classList.contains('accordion-card');
     const startHeight = content.hidden ? 0 : content.getBoundingClientRect().height;
     const startOpacity = content.hidden ? 0 : Number.parseFloat(getComputedStyle(content).opacity) || 1;
     sectionAnimations.get(section)?.cancel();
     section.classList.toggle('is-collapsed', shouldCollapse);
     titleToggle.setAttribute('aria-expanded', String(!shouldCollapse));
+    if (!shouldCollapse) {
+        content.hidden = false;
+        if (isAccordionCard) content.scrollTop = 0;
+    }
 
     if (prefersReducedMotion.matches || typeof content.animate !== 'function') {
         content.hidden = shouldCollapse;
-        return;
+        content.classList.remove('is-animating');
+        sectionAnimations.delete(section);
+        return Promise.resolve();
     }
 
-    if (!shouldCollapse) content.hidden = false;
-
-    const expandedHeight = content.scrollHeight;
+    const expandedHeight = shouldCollapse ? 0 : (isAccordionCard ? content.getBoundingClientRect().height : content.scrollHeight);
     const animation = content.animate(
         shouldCollapse
             ? [
@@ -298,7 +303,7 @@ function setSectionState(section, shouldCollapse) {
                 { height: `${expandedHeight}px`, opacity: 1, transform: 'translateY(0)' }
             ],
         {
-            duration: shouldCollapse ? 280 : 420,
+            duration: isAccordionCard ? 250 : (shouldCollapse ? 280 : 420),
             easing: 'cubic-bezier(.16, 1, .3, 1)',
             fill: 'both'
         }
@@ -312,27 +317,110 @@ function setSectionState(section, shouldCollapse) {
         content.hidden = shouldCollapse;
         content.classList.remove('is-animating');
         sectionAnimations.delete(section);
+        animation.cancel();
     };
 
     animation.addEventListener('finish', finishAnimation, { once: true });
-    animation.addEventListener('cancel', () => content.classList.remove('is-animating'), { once: true });
+    animation.addEventListener('cancel', () => {
+        if (sectionAnimations.get(section) !== animation) return;
+        content.classList.remove('is-animating');
+        sectionAnimations.delete(section);
+    }, { once: true });
+
+    return animation.finished.catch(() => {});
+}
+
+const accordionCards = Array.from(document.querySelectorAll('.accordion-card'));
+const mainHeader = document.querySelector('.site-header');
+let accordionScrollRequest = 0;
+
+function updateAccordionHeaderHeight() {
+    const height = Math.ceil(mainHeader?.getBoundingClientRect().height || 65);
+    document.documentElement.style.setProperty('--accordion-header-height', `${height}px`);
+}
+
+function scrollAccordionIntoView(section) {
+    const headerBottom = Math.max(0, mainHeader?.getBoundingClientRect().bottom || 0);
+    const gap = 16;
+    const viewportHeight = window.visualViewport?.height || window.innerHeight;
+    const usableHeight = Math.max(0, viewportHeight - headerBottom - gap * 2);
+    const bounds = section.getBoundingClientRect();
+    const desiredTop = bounds.height < usableHeight
+        ? headerBottom + gap + (usableHeight - bounds.height) / 2
+        : headerBottom + gap;
+
+    window.scrollTo({
+        top: Math.max(0, window.scrollY + bounds.top - desiredTop),
+        behavior: prefersReducedMotion.matches ? 'auto' : 'smooth'
+    });
+}
+
+function openAccordion(section) {
+    const request = ++accordionScrollRequest;
+    const transitions = accordionCards.map((card) => {
+        if (card === section) {
+            return card.classList.contains('is-collapsed')
+                ? setSectionState(card, false)
+                : sectionAnimations.get(card)?.finished.catch(() => {});
+        }
+        return card.classList.contains('is-collapsed')
+            ? sectionAnimations.get(card)?.finished.catch(() => {})
+            : setSectionState(card, true);
+    }).filter(Boolean);
+
+    Promise.all(transitions).then(() => {
+        if (request !== accordionScrollRequest || section.classList.contains('is-collapsed')) return;
+        requestAnimationFrame(() => {
+            if (request === accordionScrollRequest) scrollAccordionIntoView(section);
+        });
+    });
+}
+
+if (accordionCards.length) {
+    updateAccordionHeaderHeight();
+    window.addEventListener('resize', updateAccordionHeaderHeight, { passive: true });
 }
 
 collapsibleSections.forEach((section) => {
     const titleToggle = section.querySelector('.section-title-toggle');
     if (!titleToggle) return;
 
-    titleToggle.addEventListener('click', () => {
-        setSectionState(section, !section.classList.contains('is-collapsed'));
+    const toggleSection = () => {
+        if (!section.classList.contains('accordion-card')) {
+            setSectionState(section, !section.classList.contains('is-collapsed'));
+        } else if (section.classList.contains('is-collapsed')) {
+            openAccordion(section);
+        } else {
+            accordionScrollRequest += 1;
+            setSectionState(section, true);
+        }
+    };
+
+    titleToggle.addEventListener('click', toggleSection);
+
+    if (!section.classList.contains('accordion-card')) return;
+    section.addEventListener('click', (event) => {
+        if (!(event.target instanceof Element)) return;
+        if (event.target.closest('a, button, input, select, textarea, label, summary, [contenteditable], [role="button"]')) return;
+        if (window.getSelection()?.toString().trim()) return;
+        toggleSection();
     });
 });
 
 // Khi bấm vào menu điều hướng trên cùng, tự động mở rộng mục đó nếu đang bị thu gọn
 document.querySelectorAll('.primary-nav a[href^="#"], .hero-actions a[href^="#"]').forEach((link) => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (event) => {
         const targetId = link.getAttribute('href').slice(1);
         const targetEl = document.getElementById(targetId);
         if (targetEl) {
+            const accordion = targetEl.closest('.accordion-card');
+            if (accordion) {
+                event.preventDefault();
+                const hash = link.getAttribute('href');
+                if (window.location.hash !== hash) window.history.pushState(null, '', hash);
+                openAccordion(accordion);
+                return;
+            }
             if (targetEl.classList.contains('section-collapsible') && targetEl.classList.contains('is-collapsed')) {
                 setSectionState(targetEl, false);
             }
