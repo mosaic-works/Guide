@@ -1,259 +1,207 @@
 ---
 name: Awareness Operations Guide
-description: A warm editorial handbook for understanding and operating the Awareness exhibition.
+description: A quiet editorial guide with a hidden system-aware light and dark palette.
 colors:
-  clay: "#a9472d"
-  clay-dark: "#83351f"
-  clay-soft: "#f0d7cd"
-  ink: "#181817"
-  paper: "#f7f6f2"
-  paper-deep: "#eeeae2"
-  surface: "#fffefa"
-  muted: "#65625e"
-  line: "#d9d5cc"
-  line-dark: "#b8b3aa"
-  green: "#326b4f"
-  green-soft: "#dce9df"
-  status-green-ink: "#25593f"
-  sand: "#e8ddc7"
-  status-waiting-ink: "#79441f"
-  white: "#ffffff"
+  canvas-light: "#F7F5F0"
+  hero-light: "#EFECE4"
+  card-light: "#EAE4DA"
+  hover-light: "#E2DBD0"
+  accent-light: "#B5563C"
+  accent-text-light: "#8F402B"
+  on-accent-light: "#FFFDF9"
+  ink-light: "#23201D"
+  muted-light: "#6E675F"
+  line-light: "#DCD5C9"
+  canvas-dark: "#161513"
+  hero-dark: "#1C1A17"
+  card-dark: "#22201D"
+  hover-dark: "#2C2925"
+  accent-dark: "#D47459"
+  on-accent-dark: "#161513"
+  ink-dark: "#F0ECE1"
+  muted-dark: "#A39C93"
+  line-dark: "#302D28"
+  qr-paper: "#F7F5F0"
 typography:
   display:
     fontFamily: "Source Serif 4, Georgia, serif"
-    fontSize: "clamp(3.7rem, 7.4vw, 6rem)"
-    fontWeight: 500
-    lineHeight: 0.96
-    letterSpacing: "-0.04em"
+    fontSize: "clamp(2.55rem, 3.3vw, 3.5rem)"
+    fontWeight: 600
+    lineHeight: 1.02
+    letterSpacing: "-0.035em"
   headline:
     fontFamily: "Source Serif 4, Georgia, serif"
-    fontSize: "clamp(2.4rem, 5vw, 4.25rem)"
-    fontWeight: 500
-    lineHeight: 1.04
-    letterSpacing: "-0.035em"
+    fontSize: "clamp(1.8rem, 2.3vw, 2.35rem)"
+    fontWeight: 600
+    lineHeight: 1.1
+    letterSpacing: "-0.03em"
   title:
     fontFamily: "Source Serif 4, Georgia, serif"
-    fontSize: "1.55rem"
-    fontWeight: 500
-    lineHeight: 1.15
+    fontSize: "1.25rem"
+    fontWeight: 600
+    lineHeight: 1.25
   body:
-    fontFamily: "Aptos, Segoe UI, ui-sans-serif, -apple-system, BlinkMacSystemFont, sans-serif"
+    fontFamily: "Aptos, Segoe UI, ui-sans-serif, sans-serif"
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.55
   label:
-    fontFamily: "Aptos, Segoe UI, ui-sans-serif, -apple-system, BlinkMacSystemFont, sans-serif"
+    fontFamily: "Aptos, Segoe UI, ui-sans-serif, sans-serif"
     fontSize: "0.76rem"
     fontWeight: 750
     lineHeight: 1.2
-    letterSpacing: "0.03em"
+  mono:
+    fontFamily: "Consolas, Courier New, monospace"
+    fontSize: "0.88rem"
+    fontWeight: 400
+    lineHeight: 1.5
 rounded:
-  compact: "8px"
+  utility: "8px"
   control: "10px"
-  surface: "14px"
+  media: "12px"
+  surface: "16px"
   pill: "999px"
 spacing:
   xs: "8px"
   sm: "12px"
   md: "16px"
   lg: "24px"
-  xl: "32px"
+  xl: "34px"
   xxl: "48px"
-  section: "110px"
+  section: "104px"
 components:
-  button-primary:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.white}"
+  button-primary-light:
+    backgroundColor: "{colors.accent-light}"
+    textColor: "{colors.on-accent-light}"
     typography: "{typography.body}"
     rounded: "{rounded.control}"
     padding: "12px 20px"
     height: "48px"
-  button-primary-hover:
-    backgroundColor: "{colors.clay-dark}"
-  button-secondary:
-    backgroundColor: "{colors.surface}"
-    textColor: "{colors.ink}"
+  button-primary-dark:
+    backgroundColor: "{colors.accent-dark}"
+    textColor: "{colors.on-accent-dark}"
     typography: "{typography.body}"
     rounded: "{rounded.control}"
     padding: "12px 20px"
     height: "48px"
-  project-summary:
-    backgroundColor: "{colors.paper}"
-    textColor: "{colors.ink}"
+  card-light:
+    backgroundColor: "{colors.card-light}"
+    textColor: "{colors.ink-light}"
     rounded: "{rounded.surface}"
-    padding: "32px"
-  status-ready:
-    backgroundColor: "{colors.green-soft}"
-    textColor: "{colors.status-green-ink}"
-    typography: "{typography.label}"
-    rounded: "{rounded.pill}"
-    padding: "6px 11px"
-  status-waiting:
-    backgroundColor: "{colors.sand}"
-    textColor: "{colors.status-waiting-ink}"
-    typography: "{typography.label}"
-    rounded: "{rounded.pill}"
-    padding: "6px 11px"
-  search-field:
-    backgroundColor: "{colors.surface}"
-    textColor: "{colors.ink}"
-    typography: "{typography.body}"
-    rounded: "{rounded.control}"
-    padding: "0 16px 0 44px"
-    height: "48px"
+  card-dark:
+    backgroundColor: "{colors.card-dark}"
+    textColor: "{colors.ink-dark}"
+    rounded: "{rounded.surface}"
 ---
 
 # Design System: Awareness Operations Guide
 
 ## Overview
 
-**Creative North Star: "The Warm Operations Folio"**
+**Creative North Star: "The System-Aware Exhibition Folio"**
 
-Awareness presents practical project operations with the calm authority of a well-edited handbook. Warm paper, near-black ink, earthy clay accents, expressive serif headings, compact sans-serif utility text, and hairline rules turn dense operational material into a continuous, composed read.
+Awareness is a practical Vietnamese guide presented as a calm editorial document. The default Warm Editorial palette follows the visitor's operating-system appearance through CSS. The color change is automatic and has no visible switch. The same typography, layout, QR behavior, and navigation work in both appearances.
 
-The system is editorial rather than dashboard-like. Rows, sequences, and typographic contrast carry the hierarchy; bounded surfaces are rare and purposeful. Interaction remains direct and quiet, with authored line icons, restrained movement, and accessible focus states supporting the content instead of decorating it.
+The page uses a 60/30/10 relationship: the canvas dominates, cards and supporting bands form a second plane, and the accent is reserved for actions and small signals. This is a visual allocation rule, not a pixel-by-pixel quota. The account section uses one flat card color without a wash or gradient.
 
 **Key Characteristics:**
 
-- Warm cream and clay palette with near-black ink.
-- Source Serif 4 for editorial voice; Aptos/Segoe UI for utility clarity.
-- Hairline rows and reading sequences instead of repeated card grids.
-- Bounded surfaces use a gentle 14px radius and little or no elevation.
-- Authored single-stroke SVG arrows signal links and direction.
-- Desktop composition at 1440px becomes a clean single-column reading flow at 390px.
+- Warm Editorial is the default; Mindful Sage and Nordic Sand & Slate remain hidden CSS configurations.
+- Paired light and dark tokens share the same color family and reverse the lightness hierarchy.
+- Source Serif 4 headings and compact sans-serif controls keep long content readable.
+- Sections remain full-width rows; cards are used for bounded information and QR assets.
+- Reduced-motion preferences preserve state changes without spatial animation.
 
 ## Colors
 
-The palette behaves like warm printed matter: clay is the single expressive accent, while paper, ink, and fine neutral rules do most of the structural work.
+`styles.css` defines the active roles as `--canvas`, `--hero-field`, `--card`, `--hover`, `--accent`, `--on-accent`, `--ink`, `--muted`, and `--line`. The browser selects the dark values through `prefers-color-scheme: dark`. The root `data-palette` attribute can select `mindful-sage` or `nordic-sand-slate` without adding a UI control. Absence of that attribute selects Warm Editorial.
 
-### Primary
+| Role | Approximate area | Warm light | Warm dark |
+| --- | --- | --- | --- |
+| Canvas | 60% | `#F7F5F0` | `#161513` |
+| Hero diagonal | Supporting ground | `#EFECE4` | `#1C1A17` |
+| Card and supporting band | 30% | `#EAE4DA` | `#22201D` |
+| Hover | Temporary state | `#E2DBD0` | `#2C2925` |
+| CTA | 10% | `#B5563C` | `#D47459` |
+| Text on CTA | Contrast pair | `#FFFDF9` | `#161513` |
+| Primary text | Reading | `#23201D` | `#F0ECE1` |
+| Muted text | Description | `#6E675F` | `#A39C93` |
+| Border | Hairline | `#DCD5C9` | `#302D28` |
 
-- **Editorial Clay:** Use for emphasized words, the closing action field, the hero rule, and small brand marks.
-- **Deep Fired Clay:** Use for interactive hover states, inline actions, and security accents that need stronger contrast.
-- **Pale Clay Wash:** Reserve for soft accent support; it must never compete with the main clay voice.
+The same roles are available as hidden presets:
 
-### Secondary
+| Preset | Role | Light | Dark |
+| --- | --- | --- | --- |
+| Mindful Sage | Canvas / hero | `#F4F6F3` / `#EBF0E9` | `#121614` / `#171C19` |
+| Mindful Sage | Card / hover | `#E3E8E1` / `#D8E0D5` | `#1D2420` / `#262F2A` |
+| Mindful Sage | CTA / CTA text | `#3A5A40` / `#F4F6F3` | `#76A07E` / `#121614` |
+| Mindful Sage | Ink / muted / line | `#1C241E` / `#5C665E` / `#CFD6CC` | `#E8EDE9` / `#94A197` / `#2B352E` |
+| Nordic Sand & Slate | Canvas / hero | `#F6F6F4` / `#EEEEEB` | `#141619` / `#191C20` |
+| Nordic Sand & Slate | Card / hover | `#E6E6E1` / `#DDDDD6` | `#1F2328` / `#282D34` |
+| Nordic Sand & Slate | CTA / CTA text | `#3D5A6C` / `#FFFFFF` | `#6E98B3` / `#141619` |
+| Nordic Sand & Slate | Ink / muted / line | `#1E2226` / `#636970` / `#D4D4CE` | `#ECEEEF` / `#969FA8` / `#2E343B` |
 
-- **Operational Green / Soft Green:** Use only for ready/live status communication.
-- **Muted Sand:** Use only for waiting or not-yet-ready status communication.
+Small accent-colored text uses a darker Warm Editorial light derivative (`--accent-text`) so labels on cards stay legible. QR artwork retains a light `--qr-paper` backing in either appearance for scanner readability.
 
-### Neutral
+| HSL target | Light | Dark |
+| --- | --- | --- |
+| Main canvas | L 95–97%, S 15–25% | L 8–10%, S 6–12% |
+| Card | L 89–92%, 4–6 points below canvas | L 13–16%, 4–6 points above canvas |
+| Hover | L 86–88%, 7–9 points below canvas | L 17–20%, 8–10 points above canvas |
+| CTA | L 42–48%, S 50–60% | L 60–68%, S 50–60% |
+| Main text / muted / border | L 12–15% / 40–45% / 82–85% | L 90–94% / 60–65% / 18–22% |
 
-- **Warm Paper:** Default page canvas and the project-summary fill.
-- **Deep Paper:** Hover fill and subtle tonal separation within the cream world.
-- **Porcelain Surface:** The lightest bounded surface, button fill, and QR page canvas.
-- **Near-Black Ink:** Primary text, strong rules, and the dark action button.
-- **Warm Graphite:** Supporting copy and low-emphasis metadata.
-- **Hairline Linen / Dark Linen:** Default and stronger border roles; lines carry structure more often than containers do.
-- **Pure White:** High-contrast text on the dark and clay action fields.
+These are composition targets. The supplied hexadecimal pairs above and in `styles.css` are the implementation values.
 
-**The One Clay Voice Rule.** Clay is the only expressive brand accent; status colors remain semantic and local.
+**The Lightness Mirror Rule.** Keep the hue family stable. In light mode, the canvas is the lightest broad plane, the card is slightly darker, and hover darker again. In dark mode, the canvas is the darkest plane, the card is slightly lighter, and hover lighter again. The accent becomes lighter on dark ground. Avoid pure white and pure black for broad surfaces.
 
-**The Paper, Not White Rule.** Large backgrounds stay within the warm paper family so the guide retains its editorial atmosphere.
+**The Contrast Rule.** Primary text must exceed 10:1 on canvas and card. Muted labels and controls keep readable contrast in both appearances. The CTA always uses its matching `--on-accent` token.
 
 ## Typography
 
-**Display Font:** Source Serif 4 (self-hosted variable font, with Georgia fallback)  
-**Body Font:** Aptos (with Segoe UI and system sans-serif fallbacks)
-
-**Character:** The serif supplies warmth, confidence, and long-form continuity. The sans-serif keeps controls, metadata, and instructions compact and operational.
-
-### Hierarchy
-
-- **Display** (medium, fluid, tightly tracked): Reserved for the opening statement; balance lines and keep the composition spacious.
-- **Headline** (medium, fluid, tightly tracked): Section and QR hero headings.
-- **Title** (medium): Tool names, account names, workflow steps, and editorial row headings.
-- **Body** (regular): Instructions and descriptions; explanatory lines generally stop near 62ch.
-- **Label** (heavy, lightly tracked): Status pills and compact metadata; uppercase is reserved for field labels.
-
-**The Serif Leads Rule.** Serif type owns names, headings, and editorial emphasis; sans-serif owns operation, navigation, status, and controls.
-
-**The Medium, Not Bold Rule.** Large serif text remains at weight 500; scale and spacing establish authority without heavy display weights.
+Source Serif 4 remains the display face; Aptos, Segoe UI, and system sans-serif carry navigation, guidance, controls, and metadata. Consolas is used only for commands and machine-readable values. The display heading tops out at 3.5rem, section headings at 2.35rem, and tool or account titles at 1.25rem. Body copy stays near 1rem, with the hero description at 1–1.125rem. The scale steps down again below 720px.
 
 ## Layout
 
-Content sits inside a centered 1180px shell with 24px desktop gutters. The first viewport uses an asymmetric two-column grid—roughly 1.38fr to 0.62fr—with a minimum 620px hero height and a wide, fluid gap. Standard sections use 110px vertical padding and split headings into an editorial title column plus a restrained explanatory column.
-
-At 960px, the hero and section headings become one column, workflow steps become two columns, and QR rows become two columns. At 720px, the shell moves to 16px gutters, navigation becomes a full-height menu below the 64px masthead, operational tables reflow, workflow and QR rows become one column, and sections tighten to 76px. The 430px refinement stacks dense tool rows. The shipped 1440px and 390px views must remain free of horizontal overflow.
-
-**The Continuous Read Rule.** Prefer full-width editorial rows, ruled sequences, and clear section rhythm over grids of repeated cards.
-
-**The 62ch Rule.** Supporting prose should remain near 62 characters per line so instructional copy scans quickly.
+The shell is 1180px wide with 24px desktop gutters and 16px mobile gutters. The first viewport splits its statement and project summary; at 960px it becomes one column. At 1100px navigation becomes a panel; at 720px operational rows and workflow steps stack. The theme changes token values without changing content order or responsive structure.
 
 ## Elevation & Depth
 
-The system is flat by default. Tonal shifts and 1px rules establish hierarchy; the project summary is a border-only surface with no shadow. Elevation is reserved for elements that physically leave the document plane: the transient toast and the modal QR preview.
-
-### Shadow Vocabulary
-
-- **Live Halo:** A compact four-pixel status halo around the live indicator; semantic, not decorative.
-- **Toast Lift:** A low floating shadow for transient confirmation messages.
-- **Preview Lift:** The strongest shadow in the system, reserved for the modal QR image preview against its darkened backdrop.
-
-**The Border Before Shadow Rule.** Use warm 1px rules and tonal separation first; never add ambient card shadows to ordinary content.
+Card and closing-section separation comes from the card tone and quiet borders. Ordinary reading rows stay flat. Shadows are reserved for the primary action, QR hover, transient toast, image-detail frame, and protected QR preview. The accent remains scarce relative to the canvas and card fields.
 
 ## Shapes
 
-Bounded surfaces use gently rounded 14px corners. Controls use 10px corners; small utility buttons use 8px. Pills are reserved for statuses, while workflow numbers and the live dot are true circles. Editorial rows, bands, and section boundaries remain square so the page reads as a document rather than a field of cards.
-
-**The Bounded Surface Rule.** Apply the 14px radius only to genuinely bounded objects such as the project summary and preview dialog, never to every section.
+Bounded surfaces use a 16px radius, controls 10px, and media wells 12px. Pills are reserved for statuses and filters. Editorial rows and section bands remain square. The hero and page-level moments use a narrow accent rule rather than a multicolor stripe.
 
 ## Components
 
-### Buttons
+### Buttons and navigation
 
-- **Shape:** Compact 10px corners with a 48px minimum height and firm 12px by 20px padding.
-- **Primary:** Near-black fill and porcelain text; hover shifts to deep clay and lifts by 2px.
-- **Secondary:** Porcelain fill with a dark linen border; hover strengthens the border to ink.
-- **Focus:** A visible 3px clay outline with 4px offset is mandatory.
+Primary buttons use `--accent` and `--on-accent`; their dark accent is visibly lighter. Secondary buttons use card and border tokens. Focus uses a visible accent outline. Navigation text follows `--ink` and uses `--accent-text` on hover.
 
-### Chips
+The Awareness wordmark pairs its name with an orange `✯` that spins continuously; reduced-motion preferences limit it to one brief turn. Active status labels and the live indicator use a separate green success color.
 
-- **Style:** Small, heavy sans-serif labels on semantic soft fills with a full pill radius.
-- **State:** Green communicates ready/live; sand communicates waiting. Chips do not act as decorative categories.
+### Sections and cards
 
-### Cards / Containers
+The Awareness summary and closing section use `--card`, separated from `--canvas` with a quiet line. The account section is a flat `--card` field; its rows use `--hover` only during interaction. Accordion motion preserves height and opacity continuity and respects `prefers-reduced-motion`.
 
-- **Corner Style:** Gentle 14px corners only for bounded surfaces.
-- **Background:** Warm paper or porcelain surface according to surrounding contrast.
-- **Shadow Strategy:** None at rest for the project summary; see the modal exception in Elevation & Depth.
-- **Border:** One dark linen hairline around the summary, with lighter internal dividers.
-- **Internal Padding:** 32px on desktop, tightening to 22px on narrow mobile screens.
+### QR and image pages
 
-### Inputs / Fields
-
-- **Style:** 48px-tall porcelain field with a dark linen border, 10px corners, and an inline 18px search icon.
-- **Focus:** Use the global clay focus outline without suppressing the native interaction state.
-- **Placeholder:** Warm gray, visibly subordinate to entered text.
-
-### Navigation
-
-The masthead is a quiet paper band with a hairline lower rule. The serif brand pairs with a custom radial line mark; navigation links are compact sans-serif text that turn deep clay on hover. At 720px and below, a 42px bordered menu control opens a full-height paper panel with large serif link rows and hairline separators.
-
-### Editorial Rows
-
-Tool, account, workflow, and QR content is organized as ruled rows. Interactive rows shift to deep paper and move their content slightly on hover. Direction and external-link affordances use authored, round-capped SVG arrows at 1em rather than font glyphs or third-party icon packs.
-
-### QR Preview
-
-The protected-focus native dialog is a 14px bounded surface with a dark translucent, softly blurred backdrop. Its header uses a hairline divider, the image remains contained, and the original-file action appears below the preview.
+QR filters, search, cards, preview, and hidden image-data pages inherit the same theme roles. QR images sit on `--qr-paper` so transparent codes do not disappear against the dark UI. The QR preview remains a native dialog with a darkened backdrop.
 
 ## Do's and Don'ts
 
 ### Do:
 
-- **Do** use warm paper, ink, and hairline rules as the primary hierarchy system.
-- **Do** reserve clay for the brand voice, key actions, and interactive emphasis.
-- **Do** pair Source Serif 4 headings with compact Aptos/Segoe UI utility text.
-- **Do** preserve the 1180px shell, 24px desktop gutters, and 16px mobile gutters.
-- **Do** keep authored SVG link icons optically light, round-capped, and aligned with text.
-- **Do** verify both 1440px and 390px layouts without horizontal overflow.
+- **Do** use semantic roles for every appearance-sensitive color.
+- **Do** keep the automatic system preference hidden from the visible interface.
+- **Do** keep the card and hover lightness steps distinct in both modes.
+- **Do** retain readable text and focus indication across all pages.
+- **Do** use the light QR backing even in dark mode.
 
 ### Don't:
 
-- **Don't** replace editorial rows and sequences with a generic repeated-card dashboard.
-- **Don't** add ambient shadows to the project summary or ordinary content surfaces.
-- **Don't** spread the 14px radius across unbounded sections, bands, or row groups.
-- **Don't** introduce additional expressive accent colors beside clay.
-- **Don't** substitute a remote display font or icon library for the self-hosted serif and authored SVG set.
-- **Don't** hide focus outlines or ignore the reduced-motion fallback.
+- **Don't** invert images or QR artwork when changing appearance.
+- **Don't** use pure white or pure black as large page backgrounds.
+- **Don't** use a gradient for the account section.
+- **Don't** turn the 60/30/10 guide into an exact area calculation.

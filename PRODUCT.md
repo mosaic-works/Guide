@@ -8,7 +8,7 @@ web
 
 ## Users
 
-Nhóm thực hiện dự án Awareness cần một trang hướng dẫn nội bộ để xem nhanh công cụ, tài khoản đăng nhập, mã QR và quy trình đưa website lên internet.
+Nhóm thực hiện dự án Awareness cần một trang hướng dẫn nội bộ để xem nhanh công cụ, tài khoản Mở, mã QR và quy trình đưa website lên internet.
 
 ## Product Purpose
 
@@ -21,7 +21,7 @@ Nhóm viết code bằng VS Code trên máy, lưu mã nguồn trên GitHub, kế
 ## Capabilities and Constraints
 
 - Trang là website tĩnh bằng HTML, CSS và JavaScript.
-- Có trang danh sách 29 mã QR, được nhóm theo từng phòng và có chế độ xem ảnh.
+- Có trang danh sách 28 mã QR, được nhóm theo từng phòng và có chế độ xem ảnh.
 - Hiển thị đầy đủ thông tin tài khoản và mật khẩu vận hành nội bộ của nhóm dự án.
 - Các tên công cụ GitHub, Vercel, Supabase, ChatGPT, Tencent HY 3D và towebp có liên kết đến trang tương ứng. Trạng thái: GitHub (Đã push xong), ChatGPT (Đã xong), Tencent HY 3D (Sẵn sàng); Codex hiển thị mờ với ghi chú không cần cho mục tiêu trình bày ý tưởng sản phẩm.
 - Mục "Thông tin dự án" đã có nội dung chi tiết về kiến trúc hệ thống; mục "Hướng phát triển tương lai" có trạng thái Đang cập nhật; mục "Các bước cài đặt" có hướng dẫn 4 phần hoàn chỉnh (IDE, Node.js/Git, GitHub config, và quy trình chạy dự án).

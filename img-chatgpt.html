@@ -5,25 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChatGPT — Dữ liệu ảnh</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .img-detail-page { background: var(--paper); min-height: 100vh; display: flex; flex-direction: column; }
-        .img-detail-main { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 24px; }
-        .img-detail-label { display: inline-block; margin-bottom: 18px; padding: 4px 12px; border-radius: 999px; background: var(--sand); color: var(--clay-dark); font-size: .76rem; font-weight: 750; letter-spacing: .05em; text-transform: uppercase; }
-        .img-detail-title { margin: 0 0 40px; font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 500; letter-spacing: -.03em; text-align: center; }
-        .img-detail-frame { width: 100%; max-width: 900px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,.07); }
-        .img-detail-frame img { display: block; width: 100%; height: auto; }
-        .img-detail-caption { padding: 18px 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; font-style: italic; text-align: center; }
-        .img-back { display: inline-flex; align-items: center; gap: 8px; margin-top: 36px; color: var(--clay-dark); font-size: .92rem; font-weight: 700; text-decoration: none; }
-        .img-back:hover { color: var(--ink); }
-        .img-back::before { content: '←'; }
-    </style>
+    <script src="app.js" defer></script>
 </head>
 <body class="img-detail-page">
 
     <header class="site-header">
         <div class="shell header-inner">
+                        <time class="header-clock" data-live-clock aria-label="Ngày và giờ hiện tại">
+                <span class="header-clock-time" data-clock-time>--:--:--</span>
+                <span class="header-clock-date" data-clock-date>--/--/----</span>
+            </time>
             <a class="brand" href="index.html" aria-label="Awareness">
-                <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2v28M2 16h28M6.1 6.1l19.8 19.8M25.9 6.1 6.1 25.9M10.6 3.5l10.8 25M28.5 10.6l-25 10.8M21.4 3.5l-10.8 25M3.5 10.6l25 10.8"/></svg>
+                <span class="brand-mark" aria-hidden="true">✯</span>
                 <span>Awareness</span>
             </a>
 
@@ -31,12 +24,12 @@
     </header>
 
     <main class="img-detail-main">
-        <span class="img-detail-label">Dữ liệu ảnh · 01</span>
         <h1 class="img-detail-title">ChatGPT</h1>
         <div class="img-detail-frame">
             <img src="img/chatgpt.png" alt="Giao diện ChatGPT">
             <p class="img-detail-caption">Giao diện ChatGPT — công cụ AI hỗ trợ chỉnh sửa và tạo hình ảnh cho dự án Awareness.</p>
         </div>
+        <a class="img-back" href="data-img.html">Quay lại dữ liệu ảnh</a>
 
     </main>
 

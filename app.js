@@ -27,6 +27,32 @@ document.querySelectorAll('[data-year]').forEach((element) => {
     element.textContent = new Date().getFullYear();
 });
 
+document.querySelectorAll('[data-live-clock]').forEach((clock) => {
+    const dateOutput = clock.querySelector('[data-clock-date]');
+    const timeOutput = clock.querySelector('[data-clock-time]');
+    const dateFormatter = new Intl.DateTimeFormat('vi-VN', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+    });
+    const timeFormatter = new Intl.DateTimeFormat('vi-VN', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hourCycle: 'h23'
+    });
+
+    const updateClock = () => {
+        const now = new Date();
+        if (dateOutput) dateOutput.textContent = dateFormatter.format(now);
+        if (timeOutput) timeOutput.textContent = timeFormatter.format(now);
+        clock.dateTime = now.toISOString();
+    };
+
+    updateClock();
+    window.setInterval(updateClock, 1000);
+});
+
 const toast = document.querySelector('.toast');
 let toastTimer;
 
@@ -36,6 +62,87 @@ function showToast(message) {
     toast.textContent = message;
     toast.classList.add('is-visible');
     toastTimer = window.setTimeout(() => toast.classList.remove('is-visible'), 2200);
+}
+
+const feedbackEndpoint = 'https://script.google.com/macros/s/AKfycby-reALynElbYg4QpU4P6PVcD8qj3qObR3SPil7rOLZkjJv7w0jXzxbv03IgAKyGAu6HA/exec';
+const feedbackTrigger = document.querySelector('.footer-feedback-trigger');
+const feedbackDialog = document.getElementById('feedback-dialog');
+const feedbackForm = document.getElementById('feedback-form');
+const feedbackInput = document.getElementById('feedback-content');
+const feedbackSubmit = document.getElementById('feedback-submit');
+const feedbackStatus = document.getElementById('feedback-status');
+const pendingFeedbackBeacons = new Set();
+let feedbackSending = false;
+
+if (feedbackTrigger && feedbackDialog) {
+    feedbackTrigger.addEventListener('click', () => {
+        if (typeof feedbackDialog.showModal !== 'function') return;
+        feedbackDialog.showModal();
+        window.requestAnimationFrame(() => feedbackInput?.focus());
+    });
+
+    feedbackDialog.querySelectorAll('[data-close-feedback]').forEach((button) => {
+        button.addEventListener('click', () => feedbackDialog.close());
+    });
+
+    feedbackDialog.addEventListener('click', (event) => {
+        if (event.target === feedbackDialog) feedbackDialog.close();
+    });
+}
+
+if (feedbackForm && feedbackInput && feedbackSubmit && feedbackStatus) {
+    feedbackForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (feedbackSending) return;
+
+        const content = feedbackInput.value.trim();
+        if (!content) {
+            feedbackStatus.textContent = 'Vui lòng nhập nội dung trước khi gửi.';
+            feedbackStatus.className = 'feedback-status is-error';
+            feedbackInput.focus();
+            return;
+        }
+
+        const params = new URLSearchParams({
+            content,
+            createdAt: new Date().toISOString(),
+            type: 'feedback'
+        });
+        const beacon = new Image();
+        const releaseBeacon = () => pendingFeedbackBeacons.delete(beacon);
+        pendingFeedbackBeacons.add(beacon);
+        beacon.addEventListener('load', releaseBeacon, { once: true });
+        beacon.addEventListener('error', releaseBeacon, { once: true });
+
+        feedbackSending = true;
+        feedbackSubmit.disabled = true;
+        feedbackForm.setAttribute('aria-busy', 'true');
+        feedbackStatus.textContent = 'Đang gửi góp ý…';
+        feedbackStatus.className = 'feedback-status';
+
+        try {
+            beacon.src = `${feedbackEndpoint}?${params.toString()}`;
+        } catch {
+            releaseBeacon();
+            feedbackSending = false;
+            feedbackSubmit.disabled = false;
+            feedbackForm.removeAttribute('aria-busy');
+            feedbackStatus.textContent = 'Không thể khởi chạy yêu cầu gửi. Vui lòng thử lại.';
+            feedbackStatus.className = 'feedback-status is-error';
+            return;
+        }
+
+        feedbackForm.reset();
+        feedbackStatus.textContent = 'Gửi thành công';
+        feedbackStatus.className = 'feedback-status is-success';
+        showToast('Đã gửi góp ý.');
+
+        window.setTimeout(() => {
+            feedbackSending = false;
+            feedbackSubmit.disabled = false;
+            feedbackForm.removeAttribute('aria-busy');
+        }, 1200);
+    });
 }
 
 document.querySelectorAll('[data-copy]').forEach((button) => {
@@ -157,6 +264,8 @@ if (previewDialog) {
 
 // Bấm vào tiêu đề để mở hoặc thu gọn nội dung của từng mục.
 const collapsibleSections = document.querySelectorAll('.section-collapsible');
+const sectionAnimations = new WeakMap();
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 function setSectionState(section, shouldCollapse) {
     const titleToggle = section.querySelector('.section-title-toggle');
@@ -164,9 +273,49 @@ function setSectionState(section, shouldCollapse) {
     const content = document.getElementById(titleToggle.getAttribute('aria-controls'));
     if (!content) return;
 
+    const startHeight = content.hidden ? 0 : content.getBoundingClientRect().height;
+    const startOpacity = content.hidden ? 0 : Number.parseFloat(getComputedStyle(content).opacity) || 1;
+    sectionAnimations.get(section)?.cancel();
     section.classList.toggle('is-collapsed', shouldCollapse);
     titleToggle.setAttribute('aria-expanded', String(!shouldCollapse));
-    content.hidden = shouldCollapse;
+
+    if (prefersReducedMotion.matches || typeof content.animate !== 'function') {
+        content.hidden = shouldCollapse;
+        return;
+    }
+
+    if (!shouldCollapse) content.hidden = false;
+
+    const expandedHeight = content.scrollHeight;
+    const animation = content.animate(
+        shouldCollapse
+            ? [
+                { height: `${startHeight}px`, opacity: startOpacity, transform: 'translateY(0)' },
+                { height: '0px', opacity: 0, transform: 'translateY(-10px)' }
+            ]
+            : [
+                { height: `${startHeight}px`, opacity: startOpacity, transform: 'translateY(-10px)' },
+                { height: `${expandedHeight}px`, opacity: 1, transform: 'translateY(0)' }
+            ],
+        {
+            duration: shouldCollapse ? 280 : 420,
+            easing: 'cubic-bezier(.16, 1, .3, 1)',
+            fill: 'both'
+        }
+    );
+
+    sectionAnimations.set(section, animation);
+    content.classList.add('is-animating');
+
+    const finishAnimation = () => {
+        if (sectionAnimations.get(section) !== animation) return;
+        content.hidden = shouldCollapse;
+        content.classList.remove('is-animating');
+        sectionAnimations.delete(section);
+    };
+
+    animation.addEventListener('finish', finishAnimation, { once: true });
+    animation.addEventListener('cancel', () => content.classList.remove('is-animating'), { once: true });
 }
 
 collapsibleSections.forEach((section) => {

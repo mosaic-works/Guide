@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Thư viện 29 mã QR của triển lãm trực tuyến Awareness.">
+    <meta name="description" content="Thư viện 28 mã QR của triển lãm trực tuyến Awareness.">
     <title>Thư viện QR — Awareness</title>
     <link rel="stylesheet" href="styles.css">
     <script src="app.js" defer></script>
@@ -11,12 +11,15 @@
 <body class="qr-page">
     <header class="site-header qr-header">
         <div class="shell header-inner">
+                        <time class="header-clock" data-live-clock aria-label="Ngày và giờ hiện tại">
+                <span class="header-clock-time" data-clock-time>--:--:--</span>
+                <span class="header-clock-date" data-clock-date>--/--/----</span>
+            </time>
             <a class="brand" href="index.html" aria-label="Awareness — về trang hướng dẫn">
-                <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2v28M2 16h28M6.1 6.1l19.8 19.8M25.9 6.1 6.1 25.9M10.6 3.5l10.8 25M28.5 10.6l-25 10.8M21.4 3.5l-10.8 25M3.5 10.6l25 10.8"/></svg>
+                <span class="brand-mark" aria-hidden="true">✯</span>
                 <span>Awareness</span>
             </a>
             <div class="qr-header-actions" style="gap: 10px;">
-                <a class="button button-light" href="data-img.html">Dữ liệu ảnh</a>
                 <a class="button button-light" href="index.html">Về trang hướng dẫn</a>
             </div>
         </div>
@@ -26,13 +29,12 @@
         <section class="qr-hero">
             <div class="shell qr-hero-inner">
                 <div>
-                    <span class="stage-tag">Bộ sưu tập mã QR</span>
                     <h1>Thư viện QR của triển lãm</h1>
-                    <p>Khám phá 29 mã QR tương ứng với các hiện vật và chủ đề triển lãm trực tuyến Awareness.</p>
+                    <p>Khám phá 28 mã QR tương ứng với các hiện vật và chủ đề triển lãm trực tuyến Awareness.</p>
                 </div>
                 <div class="qr-hero-stats">
                     <div class="stat-card">
-                        <span class="stat-number">29</span>
+                        <span class="stat-number">28</span>
                         <span class="stat-label">Tổng số mã</span>
                     </div>
                     <div class="stat-card">
@@ -46,13 +48,13 @@
         <div class="shell qr-content">
             <div class="qr-toolbar">
                 <nav class="qr-filter-tabs" aria-label="Lọc theo nhóm">
-                    <button type="button" class="filter-tab is-active" data-filter="all">Tất cả <span class="tab-count">29</span></button>
+                    <button type="button" class="filter-tab is-active" data-filter="all">Tất cả <span class="tab-count">28</span></button>
                     <button type="button" class="filter-tab" data-filter="general">Tổng quát <span class="tab-count">1</span></button>
                     <button type="button" class="filter-tab" data-filter="p1">Phòng 1 <span class="tab-count">4</span></button>
-                    <button type="button" class="filter-tab" data-filter="p2">Phòng 2 <span class="tab-count">2</span></button>
+                    <button type="button" class="filter-tab" data-filter="p2">Phòng 2 <span class="tab-count">3</span></button>
                     <button type="button" class="filter-tab" data-filter="p3">Phòng 3 <span class="tab-count">5</span></button>
                     <button type="button" class="filter-tab" data-filter="p4">Phòng 4 <span class="tab-count">9</span></button>
-                    <button type="button" class="filter-tab" data-filter="p5">Phòng 5 <span class="tab-count">8</span></button>
+                    <button type="button" class="filter-tab" data-filter="p5">Phòng 5 <span class="tab-count">6</span></button>
                 </nav>
 
                 <div class="qr-search-wrap">
@@ -61,14 +63,14 @@
                         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 4 4"/></svg>
                         <input type="search" placeholder="Tìm kiếm theo tên QR..." data-qr-search autocomplete="off">
                     </label>
-                    <p class="qr-count" data-result-count>29 mã QR</p>
+                    <p class="qr-count" data-result-count>28 mã QR</p>
                 </div>
             </div>
 
             <div class="empty-state" aria-live="polite">
                 <h2>Không tìm thấy mã QR</h2>
                 <p>Hãy thử tìm từ khóa khác hoặc bấm nút đặt lại.</p>
-                <button type="button" class="button button-light" id="reset-qr-search">Xem tất cả 29 mã</button>
+                <button type="button" class="button button-light" id="reset-qr-search">Xem tất cả 28 mã</button>
             </div>
 
             <!-- Tổng quát -->
@@ -150,9 +152,20 @@
             <section class="qr-section" data-section="p2" aria-labelledby="p2-heading">
                 <div class="qr-section-header">
                     <h2 id="p2-heading">Phòng 2</h2>
-                    <span class="section-badge">2 mã</span>
+                    <span class="section-badge">3 mã</span>
                 </div>
                 <ul class="qr-list">
+                    <li data-section="p2">
+                        <a href="qr/p2/Cocaine_tinh the/Cocaine_tinh the.png" class="qr-card" data-name="Cocaine tinh thể" data-section-title="Phòng 2">
+                            <div class="qr-thumb-wrap">
+                                <img src="qr/p2/Cocaine_tinh the/Cocaine_tinh the.png" alt="QR Cocaine tinh thể" loading="lazy" class="qr-thumb">
+                            </div>
+                            <div class="qr-info">
+                                <span class="qr-tag">Phòng 2</span>
+                                <h3 class="qr-name">Cocaine tinh thể</h3>
+                            </div>
+                        </a>
+                    </li>
                     <li data-section="p2">
                         <a href="qr/p2/Heroin/heroin-v2.png" class="qr-card" data-name="Heroin" data-section-title="Phòng 2">
                             <div class="qr-thumb-wrap">
@@ -356,20 +369,9 @@
             <section class="qr-section" data-section="p5" aria-labelledby="p5-heading">
                 <div class="qr-section-header">
                     <h2 id="p5-heading">Phòng 5</h2>
-                    <span class="section-badge">8 mã</span>
+                    <span class="section-badge">6 mã</span>
                 </div>
                 <ul class="qr-list">
-                    <li data-section="p5">
-                        <a href="qr/p5/Bóng cười/laughing-gas-v2.png" class="qr-card" data-name="Bóng cười" data-section-title="Phòng 5">
-                            <div class="qr-thumb-wrap">
-                                <img src="qr/p5/Bóng cười/laughing-gas-v2.png" alt="QR Bóng cười" loading="lazy" class="qr-thumb">
-                            </div>
-                            <div class="qr-info">
-                                <span class="qr-tag">Phòng 5</span>
-                                <h3 class="qr-name">Bóng cười</h3>
-                            </div>
-                        </a>
-                    </li>
                     <li data-section="p5">
                         <a href="qr/p5/Cần sa có trong bánh, kẹo/cannabis-edibles-v2.png" class="qr-card" data-name="Cần sa trong bánh, kẹo" data-section-title="Phòng 5">
                             <div class="qr-thumb-wrap">
@@ -411,17 +413,6 @@
                             <div class="qr-info">
                                 <span class="qr-tag">Phòng 5</span>
                                 <h3 class="qr-name">Pod Chill</h3>
-                            </div>
-                        </a>
-                    </li>
-                    <li data-section="p5">
-                        <a href="qr/p5/shisha/shisha-v2.png" class="qr-card" data-name="Shisha" data-section-title="Phòng 5">
-                            <div class="qr-thumb-wrap">
-                                <img src="qr/p5/shisha/shisha-v2.png" alt="QR Shisha" loading="lazy" class="qr-thumb">
-                            </div>
-                            <div class="qr-info">
-                                <span class="qr-tag">Phòng 5</span>
-                                <h3 class="qr-name">Shisha</h3>
                             </div>
                         </a>
                     </li>
